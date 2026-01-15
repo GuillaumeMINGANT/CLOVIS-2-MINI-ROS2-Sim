@@ -1,5 +1,5 @@
 /// @file moveit_control_gui.cpp
-/// @brief A ROS2 node providing a GUI to control a robotic arm and gripper using MoveIt.
+/// @brief A ROS2 node providing a GUI to control a humanoid robot leg using MoveIt.
 
 #include <QApplication>
 #include <QComboBox>
@@ -22,14 +22,13 @@
 #include <iostream> // For debugging output
 
 /**
- * @brief A GUI class to control a robotic arm and gripper using MoveIt.
+ * @brief A GUI class to control a humanoid robot leg using MoveIt.
  */
 class MoveItControlGui : public QWidget {
 public:
     MoveItControlGui(rclcpp::Node::SharedPtr node)
         : node_(node),
-          move_group_interface_(node_, "arm"),
-          gripper_move_group_(node_, "gripper"),
+          move_group_interface_(node_, "left_leg"),
           tf_buffer_(node_->get_clock()),
           tf_listener_(tf_buffer_),
           executor_(std::make_shared<rclcpp::executors::SingleThreadedExecutor>()),
@@ -46,9 +45,6 @@ public:
         QPushButton *move_to_tf_btn = new QPushButton("Move to TF Position", this);
         QPushButton *refresh_frames_btn = new QPushButton("Refresh TF Frames", this);
 
-        QPushButton *open_gripper_btn = new QPushButton("Open Gripper", this);
-        QPushButton *close_gripper_btn = new QPushButton("Close Gripper", this);
-
         tf_frame_selector_ = new QComboBox(this);
         layout->addWidget(tf_frame_selector_);
 
@@ -60,16 +56,12 @@ public:
         layout->addWidget(move_to_random_pose_btn);
         layout->addWidget(move_to_tf_btn);
         layout->addWidget(refresh_frames_btn);
-        layout->addWidget(open_gripper_btn);
-        layout->addWidget(close_gripper_btn);
 
         connect(move_to_home_btn, &QPushButton::clicked, this, &MoveItControlGui::moveToHomePosition);
         connect(move_to_predefined_btn, &QPushButton::clicked, this, &MoveItControlGui::moveToPredefinedPosition);
         connect(move_to_random_pose_btn, &QPushButton::clicked, this, &MoveItControlGui::moveToRandomPose);
         connect(move_to_tf_btn, &QPushButton::clicked, this, &MoveItControlGui::moveToTf);
         connect(refresh_frames_btn, &QPushButton::clicked, this, &MoveItControlGui::refreshTfFrames);
-        connect(open_gripper_btn, &QPushButton::clicked, this, &MoveItControlGui::openGripper);
-        connect(close_gripper_btn, &QPushButton::clicked, this, &MoveItControlGui::closeGripper);
 
         setLayout(layout);
         refreshTfFrames(); // Refresh frames on startup
@@ -85,7 +77,6 @@ public:
 private:
     rclcpp::Node::SharedPtr node_;
     moveit::planning_interface::MoveGroupInterface move_group_interface_;
-    moveit::planning_interface::MoveGroupInterface gripper_move_group_;
     tf2_ros::Buffer tf_buffer_;
     tf2_ros::TransformListener tf_listener_;
     QComboBox *tf_frame_selector_;
@@ -142,76 +133,6 @@ void moveToRandomPose() {
         // Logic to refresh the TF frames in the combo box
         tf_frame_selector_->clear();
         // Populate tf_frame_selector_ with available frames
-    }
-
-    // Constants for gripper positions
-    const double GRIPPER_OPEN_POSITION = 0.0;
-    const double GRIPPER_CLOSED_POSITION = 0.99;
-
-    // Define positions for all joints based on ServoGear
-    struct GripperPositions {
-        double servo_gear_position;
-    };
-
-    GripperPositions OPEN_POSITION = {GRIPPER_OPEN_POSITION};
-    GripperPositions CLOSED_POSITION = {GRIPPER_CLOSED_POSITION};
-
-    void openGripper() {
-        RCLCPP_INFO(node_->get_logger(), "Opening gripper...");
-        moveGripperToPosition(OPEN_POSITION);
-    }
-
-    void closeGripper() {
-        RCLCPP_INFO(node_->get_logger(), "Closing gripper...");
-        moveGripperToPosition(CLOSED_POSITION);
-    }
-
-    void moveGripperToPosition(const GripperPositions& positions) {
-        double servo_position = positions.servo_gear_position;
-
-        // Calculate positions for dependent joints
-        double left_gripper_position = -servo_position;
-        double left_pivot_arm_position = -servo_position;
-        double passif_gear_position = -servo_position;
-        double right_gripper_position = servo_position;
-        double right_pivot_arm_position = -servo_position;
-
-        RCLCPP_INFO(node_->get_logger(), "Moving gripper to positions: ServoGear %.2f, LeftGripper %.2f, RightGripper %.2f, LeftPivotArm %.2f, RightPivotArm %.2f, PassifGear %.2f",
-                    servo_position, left_gripper_position, right_gripper_position,
-                    left_pivot_arm_position, right_pivot_arm_position, passif_gear_position);
-
-        // Set the target positions for all joints
-        std::vector<std::string> joint_names = {"ServoGear", "LeftGripper", "RightGripper", "LeftPivotArm", "RightPivotArm", "PassifGear"};
-        std::vector<double> joint_positions = {
-            servo_position,
-            left_gripper_position,
-            right_gripper_position,
-            left_pivot_arm_position,
-            right_pivot_arm_position,
-            passif_gear_position
-        };
-
-        // Set the joint value target for the gripper
-        gripper_move_group_.setJointValueTarget(joint_names, joint_positions);
-
-        // Execute the plan for moving the gripper
-        if (executeGripperPlan()) {
-            RCLCPP_INFO(node_->get_logger(), "Gripper moved to specified positions.");
-            status_label_->setText(QString("Status: Gripper moved to specified positions."));
-        } else {
-            RCLCPP_ERROR(node_->get_logger(), "Gripper planning failed!");
-            status_label_->setText("Status: Gripper planning failed!");
-        }
-    }
-
-    bool executeGripperPlan() {
-        moveit::planning_interface::MoveGroupInterface::Plan gripper_plan;
-        if (gripper_move_group_.plan(gripper_plan) == moveit::core::MoveItErrorCode::SUCCESS) {
-            RCLCPP_INFO(node_->get_logger(), "Gripper plan successful! Executing...");
-            gripper_move_group_.execute(gripper_plan);
-            return true;
-        }
-        return false;
     }
 
     void moveToPosition(double x, double y, double z, double ox, double oy, double oz, double ow) {

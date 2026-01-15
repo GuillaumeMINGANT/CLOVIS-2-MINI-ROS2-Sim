@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="clovis2mini_ros2_control" params="name initial_positions_file">
+    <xacro:property name="initial_positions" value="${load_yaml(initial_positions_file)['initial_positions']}"/>
+
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <!-- By default, set up controllers for simulation. This won't work on real hardware -->
+        <plugin>mock_components/GenericSystem</plugin>
+      </hardware>
+<joint name="R0_AxisRz_Waist_Yaw">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R0_AxisRz_Waist_Yaw']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R1_AxisRx_Waist_Roll">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R1_AxisRx_Waist_Roll']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R2_AxisRy_Abs_Pitch">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R2_AxisRy_Abs_Pitch']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R10_AxisRy_Hips_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R10_AxisRy_Hips_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R11_AxisRx_Hips_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R11_AxisRx_Hips_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R12_AxisRz_Hips_Rotation">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R12_AxisRz_Hips_Rotation']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R13_AxisRy_Knee_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R13_AxisRy_Knee_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R14_AxisRy_Ankle_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R14_AxisRy_Ankle_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R15_AxisRx_Ankle_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R15_AxisRx_Ankle_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R16_AxisRx_Toe_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R16_AxisRx_Toe_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R20_AxisRy_Hips_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R20_AxisRy_Hips_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R21_AxisRx_Hips_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R21_AxisRx_Hips_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R22_AxisRz_Hips_Rotation">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R22_AxisRz_Hips_Rotation']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R23_AxisRy_Knee_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R23_AxisRy_Knee_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R24_AxisRy_Ankle_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R24_AxisRy_Ankle_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R25_AxisRx_Ankle_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R25_AxisRx_Ankle_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R26_AxisRx_Toe_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R26_AxisRx_Toe_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+    </ros2_control>
+  </xacro:macro>
+</robot>

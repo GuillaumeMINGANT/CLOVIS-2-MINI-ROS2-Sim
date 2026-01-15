@@ -83,13 +83,13 @@ Additionally, the robot integrate several sensors, like a camera for precise obj
 3. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/ABMI-software/Robot5A-Simulation.git ~/Robot5A-Simulation
+    git clone https://github.com/ABMI-software/CLOVIS-2-MINI-ROS2-Sim.git ~/CLOVIS-2-MINI-ROS2-Sim
     ```
 
 4. **Build the Workspace**
 
     ```bash
-    cd ~/Robot5A-Simulation
+    cd ~/CLOVIS-2-MINI-ROS2-Sim
     source /opt/ros/humble/setup.bash
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
@@ -116,7 +116,7 @@ Additionally, the robot integrate several sensors, like a camera for precise obj
     ```bash
     echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
     echo "source /usr/share/gazebo/setup.bash" >> ~/.bashrc
-    echo "source ~/Robot5A-Simulation/install/setup.bash" >> ~/.bashrc
+    echo "source ~/CLOVIS-2-MINI-ROS2-Sim/install/setup.bash" >> ~/.bashrc
     echo "export QT_QPA_PLATFORM=xcb" >> ~/.bashrc
     ```
 
@@ -125,7 +125,7 @@ Additionally, the robot integrate several sensors, like a camera for precise obj
 1. **Build Clean**
 
     ```bash
-    cd ~/Robot5A-Simulation
+    cd ~/CLOVIS-2-MINI-ROS2-Sim
     rm -rf build install log
     source /opt/ros/humble/setup.bash
     colcon build --symlink-install --cmake-clean-cache
@@ -213,12 +213,12 @@ Contributions are welcome! Please follow these steps:
 
 1. **Fork the Repository and fork it**
 
-    Create a new [fork](https://github.com/ABMI-software/Robot5A-Simulation/fork).
+    Create a new [fork](https://github.com/ABMI-software/CLOVIS-2-MINI-ROS2-Sim/fork).
 
 2. **Enter the sources**
 
     ```bash
-    cd ~/Robot5A-Simulation
+    cd ~/CLOVIS-2-MINI-ROS2-Sim
     ```
 
 3. **Create a Feature Branch**
@@ -241,7 +241,7 @@ Contributions are welcome! Please follow these steps:
 
 6. **Open a Pull Request**
 
-    Open a [pull request](https://github.com/ABMI-software/Robot5A-Simulation/compare)
+    Open a [pull request](https://github.com/ABMI-software/CLOVIS-2-MINI-ROS2-Sim/compare)
 
 ## Documentation
 
@@ -253,4 +253,4 @@ This project is licensed under the MIT License.
 
 ---
 
-*[Developed by Guillaume MINGANT, special thanks to Eliott, Omar, Matthieu, Chloé, Kenji, José - ABMI Groupe](https://github.com/ABMI-software/Robot5A-Simulation)*
+*[Developed by Guillaume MINGANT, special thanks to Eliott, Omar, Matthieu, Chloé, Kenji, José - ABMI Groupe](https://github.com/ABMI-software/CLOVIS-2-MINI-ROS2-Sim)*

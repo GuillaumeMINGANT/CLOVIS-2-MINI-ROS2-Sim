@@ -3,39 +3,54 @@ controller_manager:
   ros__parameters:
     update_rate: 100  # Hz
 
-    arm_controller:
+    torso_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
-
-    gripper_controller:
+    left_leg_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
+    right_leg_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-arm_controller:
+torso_controller:
   ros__parameters:
     joints:
-      - R0_Yaw
-      - R1_Pitch
-      - R2_Pitch
-      - R3_Yaw
-      - R4_Pitch
+      - R0_AxisRz_Waist_Yaw
+      - R1_AxisRx_Waist_Roll
+      - R2_AxisRy_Abs_Pitch
     command_interfaces:
       - position
     state_interfaces:
       - position
       - velocity
-gripper_controller:
+left_leg_controller:
   ros__parameters:
     joints:
-      - ServoGear
-      - LeftGripper
-      - LeftPivotArm
-      - PassifGear
-      - RightGripper
-      - RightPivotArm
+      - R10_AxisRy_Hips_Flexion
+      - R11_AxisRx_Hips_Abduction
+      - R12_AxisRz_Hips_Rotation
+      - R13_AxisRy_Knee_Flexion
+      - R14_AxisRy_Ankle_Flexion
+      - R15_AxisRx_Ankle_Abduction
+      - R16_AxisRx_Toe_Flexion
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+right_leg_controller:
+  ros__parameters:
+    joints:
+      - R20_AxisRy_Hips_Flexion
+      - R21_AxisRx_Hips_Abduction
+      - R22_AxisRz_Hips_Rotation
+      - R23_AxisRy_Knee_Flexion
+      - R24_AxisRy_Ankle_Flexion
+      - R25_AxisRx_Ankle_Abduction
+      - R26_AxisRx_Toe_Flexion
     command_interfaces:
       - position
     state_interfaces:

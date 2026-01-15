@@ -1,5 +1,5 @@
 /// @file end_pose_node.cpp
-/// @brief Node that publishes the end-effector pose of a robot arm.
+/// @brief Node that publishes the end-effector pose of the humanoid robot.
 
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <rclcpp/rclcpp.hpp>
@@ -30,12 +30,14 @@ private:
   void publishEndEffectorPose() {
     geometry_msgs::msg::TransformStamped transformStamped;
     try {
-      // Lookup the transform from base_link to R5A_link5
-      transformStamped = tf_buffer_.lookupTransform("base_link", "R5A_link5",
-                                                    tf2::TimePointZero);
+      // Lookup the transform from base_link to the left toe link
+      transformStamped =
+          tf_buffer_.lookupTransform("base_link", "Link16_AxisRx_Toe_Flexion",
+                                     tf2::TimePointZero);
     } catch (tf2::TransformException &ex) {
       RCLCPP_WARN(this->get_logger(),
-                  "Could not transform base_link to R5A_link5: %s", ex.what());
+                  "Could not transform base_link to Link16_AxisRx_Toe_Flexion: %s",
+                  ex.what());
       return;
     }
 

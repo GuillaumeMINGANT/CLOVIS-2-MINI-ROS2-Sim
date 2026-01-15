@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <robot name="CLOVIS2Mini" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="aruco.urdf.xacro" />
+
+    <link name="world" />
+    <joint name="base_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="world" />
+      <child link="base_link" />
+    </joint>
+
+    <link name="base_link" />
+    <joint name="base_link_fixed" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="base_link_R0_HipsWaist_Yaw" />
+    </joint>
+
+    <link
+  name="base_link_R0_HipsWaist_Yaw">
+  <inertial>
+    <origin
+      xyz="5.0364E-07 -0.0073562 0.0064621"
+      rpy="0 0 0" />
+    <mass
+      value="0.38744" />
+    <inertia
+      ixx="0.000602"
+      ixy="-8.4057E-09"
+      ixz="3.9044E-09"
+      iyy="0.00059139"
+      iyz="0.00014423"
+      izz="0.00055466" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+    </geometry>
+  </collision>
+</link>
+<link
+  name="LinkR0_AxisRz_Waist_Yaw">
+  <inertial>
+    <origin
+      xyz="0.0079226 -1.4681E-08 0.032811"
+      rpy="0 0 0" />
+    <mass
+      value="0.074377" />
+    <inertia
+      ixx="5.2774E-05"
+      ixy="-6.4357E-11"
+      ixz="8.6681E-06"
+      iyy="0.00010984"
+      iyz="-1.8069E-11"
+      izz="6.8619E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R0_AxisRz_Waist_Yaw"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="1.5708 -1.5708 0" />
+  <parent
+    link="base_link_R0_HipsWaist_Yaw" />
+  <child
+    link="LinkR0_AxisRz_Waist_Yaw" />
+  <axis
+    xyz="0 0 1" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link1_AxisRx_Waist_Roll">
+  <inertial>
+    <origin
+      xyz="-0.00041904 -2.8944E-05 0.0033473"
+      rpy="0 0 0" />
+    <mass
+      value="0.02857" />
+    <inertia
+      ixx="7.0873E-06"
+      ixy="-2.4583E-09"
+      ixz="-4.7741E-08"
+      iyy="2.3252E-05"
+      iyz="-1.5933E-09"
+      izz="2.6216E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link1_AxisRx_Waist_Roll.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link1_AxisRx_Waist_Roll.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R1_AxisRx_Waist_Roll"
+  type="revolute">
+  <origin
+    xyz="0 2.0274E-05 0.083"
+    rpy="0 0 0" />
+  <parent
+    link="LinkR0_AxisRz_Waist_Yaw" />
+  <child
+    link="Link1_AxisRx_Waist_Roll" />
+  <axis
+    xyz="-1 0.00014768 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link2_AxisRy_Abs_Pitch">
+  <inertial>
+    <origin
+      xyz="0.01165 0.00042448 0.099006"
+      rpy="0 0 0" />
+    <mass
+      value="1.7658" />
+    <inertia
+      ixx="0.0027283"
+      ixy="-2.2026E-07"
+      ixz="8.1879E-05"
+      iyy="0.0028642"
+      iyz="4.1069E-07"
+      izz="0.0026221" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R2_AxisRy_Abs_Pitch"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="Link1_AxisRx_Waist_Roll" />
+  <child
+    link="Link2_AxisRy_Abs_Pitch" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link10_AxisRy_Hips_Flexion">
+  <inertial>
+    <origin
+      xyz="-0.00091392 -0.035492 0.018195"
+      rpy="0 0 0" />
+    <mass
+      value="0.15462" />
+    <inertia
+      ixx="0.00018303"
+      ixy="-5.9541E-06"
+      ixz="-5.3223E-06"
+      iyy="0.00012928"
+      iyz="-4.7324E-06"
+      izz="7.5248E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R10_AxisRy_Hips_Flexion"
+  type="revolute">
+  <origin
+    xyz="-0.058997 -0.036813 0"
+    rpy="2.0944 -1.5708 0" />
+  <parent
+    link="base_link_R0_HipsWaist_Yaw" />
+  <child
+    link="Link10_AxisRy_Hips_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link11_AxisRx_Hips_Abduction">
+  <inertial>
+    <origin
+      xyz="0.00042158 -0.010961 -0.047292"
+      rpy="0 0 0" />
+    <mass
+      value="0.16881" />
+    <inertia
+      ixx="0.00011623"
+      ixy="-4.4236E-06"
+      ixz="-8.4034E-07"
+      iyy="0.00014479"
+      iyz="-6.5255E-06"
+      izz="0.00019636" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R11_AxisRx_Hips_Abduction"
+  type="revolute">
+  <origin
+    xyz="0 -0.0395 0"
+    rpy="-0.5236 0 0" />
+  <parent
+    link="Link10_AxisRy_Hips_Flexion" />
+  <child
+    link="Link11_AxisRx_Hips_Abduction" />
+  <axis
+    xyz="-1 0 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link12_AxisRz_Hips_Rotation">
+  <inertial>
+    <origin
+      xyz="0.029987 -0.00091501 -0.039584"
+      rpy="0 0 0" />
+    <mass
+      value="0.30889" />
+    <inertia
+      ixx="0.00025835"
+      ixy="1.2018E-05"
+      ixz="2.2232E-05"
+      iyy="0.00044678"
+      iyz="2.5395E-05"
+      izz="0.00029937" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R12_AxisRz_Hips_Rotation"
+  type="revolute">
+  <origin
+    xyz="-0.0005 0 -0.0815"
+    rpy="0 0 0" />
+  <parent
+    link="Link11_AxisRx_Hips_Abduction" />
+  <child
+    link="Link12_AxisRz_Hips_Rotation" />
+  <axis
+    xyz="0 0 -1" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link13_AxisRy_Knee_Flexion">
+  <inertial>
+    <origin
+      xyz="0.0099617 3.9516E-07 -0.073709"
+      rpy="0 0 0" />
+    <mass
+      value="0.2081" />
+    <inertia
+      ixx="0.00025127"
+      ixy="8.5828E-11"
+      ixz="-5.3734E-06"
+      iyy="0.00024051"
+      iyz="-1.0504E-09"
+      izz="7.3627E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R13_AxisRy_Knee_Flexion"
+  type="revolute">
+  <origin
+    xyz="0 0 -0.036"
+    rpy="0 0 0" />
+  <parent
+    link="Link12_AxisRz_Hips_Rotation" />
+  <child
+    link="Link13_AxisRy_Knee_Flexion" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link14_AxisRy_Ankle_Flexion">
+  <inertial>
+    <origin
+      xyz="-4.88789163386799E-05 4.22903943489428E-07 -0.000941696330492403"
+      rpy="0 0 0" />
+    <mass
+      value="0.0198828974198513" />
+    <inertia
+      ixx="5.33136120736912E-06"
+      ixy="5.67534226927354E-11"
+      ixz="-6.76121691905726E-09"
+      iyy="3.84427574199253E-06"
+      iyz="-4.02962768732565E-12"
+      izz="8.2973341598147E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R14_AxisRy_Ankle_Flexion"
+  type="revolute">
+  <origin
+    xyz="0 0 -0.14"
+    rpy="0 0 0" />
+  <parent
+    link="Link13_AxisRy_Knee_Flexion" />
+  <child
+    link="Link14_AxisRy_Ankle_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link15_AxisRx_Ankle_Abduction">
+  <inertial>
+    <origin
+      xyz="-0.0074953 -1.0019E-07 -0.041396"
+      rpy="0 0 0" />
+    <mass
+      value="0.16207" />
+    <inertia
+      ixx="8.3758E-05"
+      ixy="9.3594E-11"
+      ixz="5.7698E-06"
+      iyy="0.00011175"
+      iyz="5.4765E-10"
+      izz="0.00012701" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R15_AxisRx_Ankle_Abduction"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="Link14_AxisRy_Ankle_Flexion" />
+  <child
+    link="Link15_AxisRx_Ankle_Abduction" />
+  <axis
+    xyz="1 0 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link16_AxisRx_Toe_Flexion">
+  <inertial>
+    <origin
+      xyz="0.018198 0.0012629 -0.0095466"
+      rpy="0 0 0" />
+    <mass
+      value="0.066419" />
+    <inertia
+      ixx="3.9575E-05"
+      ixy="-1.3984E-06"
+      ixz="4.6054E-06"
+      iyy="2.8705E-05"
+      iyz="-1.2851E-07"
+      izz="5.6353E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R16_AxisRx_Toe_Flexion"
+  type="revolute">
+  <origin
+    xyz="0.055 0 -0.0425"
+    rpy="0 0 0" />
+  <parent
+    link="Link15_AxisRx_Ankle_Abduction" />
+  <child
+    link="Link16_AxisRx_Toe_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link20_AxisRy_Hips_Flexion">
+  <inertial>
+    <origin
+      xyz="-0.0010495 0.035247 0.01917"
+      rpy="0 0 0" />
+    <mass
+      value="0.15003" />
+    <inertia
+      ixx="0.00017538"
+      ixy="5.8719E-06"
+      ixz="-4.2707E-06"
+      iyy="0.00012235"
+      iyz="4.1905E-06"
+      izz="7.4147E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R20_AxisRy_Hips_Flexion"
+  type="revolute">
+  <origin
+    xyz="0.058997 -0.036813 0"
+    rpy="1.0472 -1.5708 0" />
+  <parent
+    link="base_link_R0_HipsWaist_Yaw" />
+  <child
+    link="Link20_AxisRy_Hips_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link21_AxisRx_Hips_Abduction">
+  <inertial>
+    <origin
+      xyz="0.00042068 0.010962 -0.047292"
+      rpy="0 0 0" />
+    <mass
+      value="0.16881" />
+    <inertia
+      ixx="0.00011623"
+      ixy="4.4265E-06"
+      ixz="-8.4116E-07"
+      iyy="0.00014479"
+      iyz="6.5257E-06"
+      izz="0.00019636" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R21_AxisRx_Hips_Abduction"
+  type="revolute">
+  <origin
+    xyz="0 0.0395 0"
+    rpy="0.5236 0 0" />
+  <parent
+    link="Link20_AxisRy_Hips_Flexion" />
+  <child
+    link="Link21_AxisRx_Hips_Abduction" />
+  <axis
+    xyz="-1 0 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link22_AxisRz_Hips_Rotation">
+  <inertial>
+    <origin
+      xyz="0.029987 0.00091335 -0.039584"
+      rpy="0 0 0" />
+    <mass
+      value="0.30889" />
+    <inertia
+      ixx="0.00025835"
+      ixy="-1.2018E-05"
+      ixz="2.2231E-05"
+      iyy="0.00044677"
+      iyz="-2.5394E-05"
+      izz="0.00029937" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R22_AxisRz_Hips_Rotation"
+  type="revolute">
+  <origin
+    xyz="-0.0005 0 -0.0815"
+    rpy="0 0 0" />
+  <parent
+    link="Link21_AxisRx_Hips_Abduction" />
+  <child
+    link="Link22_AxisRz_Hips_Rotation" />
+  <axis
+    xyz="0 0 -1" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link23_AxisRy_Knee_Flexion">
+  <inertial>
+    <origin
+      xyz="0.0099617 3.9516E-07 -0.073709"
+      rpy="0 0 0" />
+    <mass
+      value="0.2081" />
+    <inertia
+      ixx="0.00025127"
+      ixy="8.5828E-11"
+      ixz="-5.3734E-06"
+      iyy="0.00024051"
+      iyz="-1.0504E-09"
+      izz="7.3627E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R23_AxisRy_Knee_Flexion"
+  type="revolute">
+  <origin
+    xyz="0 0 -0.036"
+    rpy="0 0 0" />
+  <parent
+    link="Link22_AxisRz_Hips_Rotation" />
+  <child
+    link="Link23_AxisRy_Knee_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link24_AxisRy_Ankle_Flexion">
+  <inertial>
+    <origin
+      xyz="-4.8879E-05 4.229E-07 -0.0009417"
+      rpy="0 0 0" />
+    <mass
+      value="0.019883" />
+    <inertia
+      ixx="5.3314E-06"
+      ixy="5.6753E-11"
+      ixz="-6.7612E-09"
+      iyy="3.8443E-06"
+      iyz="-4.0296E-12"
+      izz="8.2973E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R24_AxisRy_Ankle_Flexion"
+  type="revolute">
+  <origin
+    xyz="0 0 -0.14"
+    rpy="0 0 0" />
+  <parent
+    link="Link23_AxisRy_Knee_Flexion" />
+  <child
+    link="Link24_AxisRy_Ankle_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link25_AxisRx_Ankle_Abduction">
+  <inertial>
+    <origin
+      xyz="-0.0074953 -1.0019E-07 -0.041396"
+      rpy="0 0 0" />
+    <mass
+      value="0.16207" />
+    <inertia
+      ixx="8.3758E-05"
+      ixy="9.3574E-11"
+      ixz="5.7698E-06"
+      iyy="0.00011175"
+      iyz="5.4765E-10"
+      izz="0.00012701" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R25_AxisRx_Ankle_Abduction"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="Link24_AxisRy_Ankle_Flexion" />
+  <child
+    link="Link25_AxisRx_Ankle_Abduction" />
+  <axis
+    xyz="1 0 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+<link
+  name="Link26_AxisRx_Toe_Flexion">
+  <inertial>
+    <origin
+      xyz="0.018198 0.0012629 -0.0095466"
+      rpy="0 0 0" />
+    <mass
+      value="0.066419" />
+    <inertia
+      ixx="3.9575E-05"
+      ixy="-1.3984E-06"
+      ixz="4.6054E-06"
+      iyy="2.8705E-05"
+      iyz="-1.2851E-07"
+      izz="5.6353E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.75294 0.75294 0.75294 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="package://robot_description/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="R26_AxisRx_Toe_Flexion"
+  type="revolute">
+  <origin
+    xyz="0.055 0 -0.0425"
+    rpy="0 0 0" />
+  <parent
+    link="Link25_AxisRx_Ankle_Abduction" />
+  <child
+    link="Link26_AxisRx_Toe_Flexion" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="0"
+    upper="0"
+    effort="0"
+    velocity="0" />
+</joint>
+
+    <ros2_control name="GazeboSystem" type="system">
+      <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        <param name="use_sim_time" type="bool">true</param>
+      </hardware>
+  <joint name="R0_AxisRz_Waist_Yaw">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R1_AxisRx_Waist_Roll">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R2_AxisRy_Abs_Pitch">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R10_AxisRy_Hips_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R11_AxisRx_Hips_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R12_AxisRz_Hips_Rotation">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R13_AxisRy_Knee_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R14_AxisRy_Ankle_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R15_AxisRx_Ankle_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R16_AxisRx_Toe_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R20_AxisRy_Hips_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R21_AxisRx_Hips_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R22_AxisRz_Hips_Rotation">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R23_AxisRy_Knee_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R24_AxisRy_Ankle_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R25_AxisRx_Ankle_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R26_AxisRx_Toe_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+    </ros2_control>
+
+    <gazebo>
+      <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+        <robotNamespace>/</robotNamespace>
+        <robot_param>robot_description</robot_param>
+        <robot_param_node>robot_state_publisher</robot_param_node>
+        <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+        <parameters>$(find robot_description)/config/controller.yaml</parameters>
+        <controller_manager_name>controller_manager</controller_manager_name>
+        <use_sim_time>true</use_sim_time>
+      </plugin>
+    </gazebo>
+
+    <gazebo>
+      <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+        <update_rate>50</update_rate>
+      <joint_name>R0_AxisRz_Waist_Yaw</joint_name>
+      <joint_name>R1_AxisRx_Waist_Roll</joint_name>
+      <joint_name>R2_AxisRy_Abs_Pitch</joint_name>
+      <joint_name>R10_AxisRy_Hips_Flexion</joint_name>
+      <joint_name>R11_AxisRx_Hips_Abduction</joint_name>
+      <joint_name>R12_AxisRz_Hips_Rotation</joint_name>
+      <joint_name>R13_AxisRy_Knee_Flexion</joint_name>
+      <joint_name>R14_AxisRy_Ankle_Flexion</joint_name>
+      <joint_name>R15_AxisRx_Ankle_Abduction</joint_name>
+      <joint_name>R16_AxisRx_Toe_Flexion</joint_name>
+      <joint_name>R20_AxisRy_Hips_Flexion</joint_name>
+      <joint_name>R21_AxisRx_Hips_Abduction</joint_name>
+      <joint_name>R22_AxisRz_Hips_Rotation</joint_name>
+      <joint_name>R23_AxisRy_Knee_Flexion</joint_name>
+      <joint_name>R24_AxisRy_Ankle_Flexion</joint_name>
+      <joint_name>R25_AxisRx_Ankle_Abduction</joint_name>
+      <joint_name>R26_AxisRx_Toe_Flexion</joint_name>
+      </plugin>
+    </gazebo>
+
+<!-- First Camera -->
+  <link name="camera_link1"> 
+    <visual> 
+      <geometry> 
+        <mesh filename="file://$(find robot_description)/meshes/3dCamera.DAE"/> 
+      </geometry>
+      <origin rpy="0 1.5708 0"/> <!-- Rotate 90 degrees around the Y-axis (1.5708 radians = 90 degrees) -->
+    </visual> 
+    <collision> 
+      <geometry> 
+        <mesh filename="file://$(find robot_description)/meshes/3dCamera.DAE"/> 
+      </geometry>
+      <origin rpy="0 1.5708 0"/> 
+    </collision> 
+  </link>
+
+  <gazebo reference="camera_link1">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <joint name="camera_joint1" type="fixed"> 
+    <origin xyz="1.2 0.0 0.45" rpy="0 0 3.14159"/> 
+    <parent link="base_link"/> 
+    <child link="camera_link1"/> 
+  </joint> 
+
+  <!-- Gazebo Camera Plugin for First Camera --> 
+  <gazebo reference="camera_link1">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head1">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>1920</width>
+          <height>1080</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far> 
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller1" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>mybot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link1</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Second Camera -->
+  <link name="camera_link2"> 
+    <visual> 
+      <geometry> 
+        <mesh filename="file://$(find robot_description)/meshes/3dCamera.DAE"/> 
+      </geometry>
+      <origin rpy="0 1.5708 0"/> <!-- Rotate 90 degrees around the Y-axis (1.5708 radians = 90 degrees) -->
+    </visual> 
+    <collision> 
+      <geometry> 
+        <mesh filename="file://$(find robot_description)/meshes/3dCamera.DAE"/> 
+      </geometry>
+      <origin rpy="0 1.5708 0"/> 
+    </collision> 
+  </link>
+
+  <gazebo reference="camera_link2">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <joint name="camera_joint2" type="fixed"> 
+    <origin xyz="-0.5 0.5 1" rpy="0 0.7854 -0.7854"/> <!-- Adjust xyz to place in front of the first camera --> 
+    <parent link="base_link"/> 
+    <child link="camera_link2"/> 
+  </joint> 
+
+  <!-- Gazebo Camera Plugin for Second Camera --> 
+  <gazebo reference="camera_link2">
+    <sensor type="camera" name="camera2">
+      <update_rate>30.0</update_rate>
+      <camera name="head2">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>1920</width>
+          <height>1080</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller2" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>mybot/camera2</cameraName>
+        <imageTopicName>image_raw2</imageTopicName>
+        <cameraInfoTopicName>camera_info2</cameraInfoTopicName>
+        <frameName>camera_link2</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

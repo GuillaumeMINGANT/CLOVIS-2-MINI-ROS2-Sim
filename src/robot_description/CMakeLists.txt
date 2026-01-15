@@ -18,7 +18,7 @@ install(DIRECTORY launch urdf meshes config worlds media models
 
 install(
   PROGRAMS
-    ${CMAKE_CURRENT_SOURCE_DIR}/urdf/r5a_v_ros.urdf.xacro
+    ${CMAKE_CURRENT_SOURCE_DIR}/urdf/clovis2mini.urdf.xacro
   DESTINATION share/${PROJECT_NAME}/urdf
 )
 

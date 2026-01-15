@@ -8,7 +8,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <box size="0.05 0.05 0.001"/> <!-- 10cm x 10cm square with minimal depth -->
+          <box size="0.05 0.05 0.001"/>
         </geometry>
       </visual>
       <collision>
@@ -39,46 +39,29 @@
     </gazebo>
   </xacro:macro>
 
-  <!-- Instantiate the ArUco planes -->
+  <!-- Torso and waist markers for CLOVIS2Mini -->
+  <!-- Waist yaw link -->
+  <xacro:aruco_plane plane_number="0" parent_link="LinkR0_AxisRz_Waist_Yaw" position="0 0 0.08" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="1" parent_link="LinkR0_AxisRz_Waist_Yaw" position="0 0 -0.08" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="2" parent_link="LinkR0_AxisRz_Waist_Yaw" position="0.08 0 0" rotation="0 1.5708 0"/>
+  <xacro:aruco_plane plane_number="3" parent_link="LinkR0_AxisRz_Waist_Yaw" position="-0.08 0 0" rotation="0 -1.5708 0"/>
 
-  <!-- For R5A_link1 -->
-  <!-- Plane 0: Front -->
-  <xacro:aruco_plane plane_number="0" parent_link="R5A_link1" position="0 0 0.08" rotation="0 0 0"/>
-  <!-- Plane 1: Back -->
-  <xacro:aruco_plane plane_number="1" parent_link="R5A_link1" position="0 0 -0.08" rotation="0 0 0"/>
-  <!-- Plane 2: Left -->
-  <xacro:aruco_plane plane_number="2" parent_link="R5A_link1" position="0.08 0 0" rotation="0 1.5708 0"/>
-  <!-- Plane 3: Right -->
-  <xacro:aruco_plane plane_number="3" parent_link="R5A_link1" position="-0.08 0 0" rotation="0 -1.5708 0"/>
+  <!-- Waist roll link -->
+  <xacro:aruco_plane plane_number="4" parent_link="Link1_AxisRx_Waist_Roll" position="0 0 0.06" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="5" parent_link="Link1_AxisRx_Waist_Roll" position="0 0 -0.06" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="6" parent_link="Link1_AxisRx_Waist_Roll" position="0.08 0 0" rotation="0 1.5708 0"/>
+  <xacro:aruco_plane plane_number="7" parent_link="Link1_AxisRx_Waist_Roll" position="-0.08 0 0" rotation="0 -1.5708 0"/>
 
-  <!-- For R5A_link2 -->
-  <!-- Plane 4: Front -->
-  <xacro:aruco_plane plane_number="4" parent_link="R5A_link2" position="0 0 0.06" rotation="0 0 0"/>
-  <!-- Plane 5: Back -->
-  <xacro:aruco_plane plane_number="5" parent_link="R5A_link2" position="0 0 -0.06" rotation="0 0 0"/>
-  <!-- Plane 6: Left -->
-  <xacro:aruco_plane plane_number="6" parent_link="R5A_link2" position="0.08 0 0" rotation="0 1.5708 0"/>
-  <!-- Plane 7: Right -->
-  <xacro:aruco_plane plane_number="7" parent_link="R5A_link2" position="-0.08 0 0" rotation="0 -1.5708 0"/>
+  <!-- Waist pitch link -->
+  <xacro:aruco_plane plane_number="8" parent_link="Link2_AxisRy_Abs_Pitch" position="0 0 0.05" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="9" parent_link="Link2_AxisRy_Abs_Pitch" position="0 0 -0.05" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="10" parent_link="Link2_AxisRy_Abs_Pitch" position="0.07 0 0" rotation="0 1.5708 0"/>
+  <xacro:aruco_plane plane_number="11" parent_link="Link2_AxisRy_Abs_Pitch" position="-0.07 0 0" rotation="0 -1.5708 0"/>
 
-  <!-- For R5A_link3 -->
-  <!-- Plane 8: Front -->
-  <xacro:aruco_plane plane_number="8" parent_link="R5A_link3" position="0 0 0.05" rotation="0 0 0"/>
-  <!-- Plane 9: Back -->
-  <xacro:aruco_plane plane_number="9" parent_link="R5A_link3" position="0 0 -0.05" rotation="0 0 0"/>
-  <!-- Plane 10: Left -->
-  <xacro:aruco_plane plane_number="10" parent_link="R5A_link3" position="0.07 0 0" rotation="0 1.5708 0"/>
-  <!-- Plane 11: Right -->
-  <xacro:aruco_plane plane_number="11" parent_link="R5A_link3" position="-0.07 0 0" rotation="0 -1.5708 0"/>
-
-  <!-- For R5A_link4 -->
-  <!-- Plane 12: Front -->
-  <xacro:aruco_plane plane_number="12" parent_link="R5A_link4" position="0 0.04 0.04" rotation="0 0 0"/>
-  <!-- Plane 13: Back -->
-  <xacro:aruco_plane plane_number="13" parent_link="R5A_link4" position="0 0.04 -0.04" rotation="0 0 0"/>
-  <!-- Plane 14: Left -->
-  <xacro:aruco_plane plane_number="14" parent_link="R5A_link4" position="0.042 0.04 0" rotation="0 1.5708 0"/>
-  <!-- Plane 15: Right -->
-  <xacro:aruco_plane plane_number="15" parent_link="R5A_link4" position="-0.042 0.04 0" rotation="0 -1.5708 0"/>
+  <!-- Base link markers -->
+  <xacro:aruco_plane plane_number="12" parent_link="base_link_R0_HipsWaist_Yaw" position="0 0.04 0.04" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="13" parent_link="base_link_R0_HipsWaist_Yaw" position="0 0.04 -0.04" rotation="0 0 0"/>
+  <xacro:aruco_plane plane_number="14" parent_link="base_link_R0_HipsWaist_Yaw" position="0.042 0.04 0" rotation="0 1.5708 0"/>
+  <xacro:aruco_plane plane_number="15" parent_link="base_link_R0_HipsWaist_Yaw" position="-0.042 0.04 0" rotation="0 -1.5708 0"/>
 
 </robot>

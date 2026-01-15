@@ -1,12 +1,12 @@
 /// @file moveit_control_simple.cpp
-/// @brief Simple ROS2 node using MoveIt to move a robot arm to a target pose.
+/// @brief Simple ROS2 node using MoveIt to move a humanoid robot leg to a target pose.
 
 #include <geometry_msgs/msg/pose_stamped.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <rclcpp/rclcpp.hpp>
 
-/// @brief Main function that initializes the node and moves the robot arm to a
-/// target pose.
+/// @brief Main function that initializes the node and moves the humanoid robot
+/// leg to a target pose.
 /// @param argc Argument count.
 /// @param argv Argument vector.
 /// @return Exit status code.
@@ -23,8 +23,8 @@ int main(int argc, char *argv[]) {
 
   // Setup the MoveIt MoveGroupInterface
   using moveit::planning_interface::MoveGroupInterface;
-  /// Replace "arm" with your planning group name
-  auto move_group_interface = MoveGroupInterface(node, "arm");
+  /// Replace "left_leg" with your planning group name
+  auto move_group_interface = MoveGroupInterface(node, "left_leg");
 
   // Set a target pose
   geometry_msgs::msg::Pose target_pose;
@@ -36,8 +36,8 @@ int main(int argc, char *argv[]) {
   target_pose.position.y = -0.252053;
   target_pose.position.z = 0.578420;
 
-  /// Replace "R5A_link5" with your end-effector link name
-  move_group_interface.setPoseTarget(target_pose, "R5A_link5");
+  /// Replace "Link16_AxisRx_Toe_Flexion" with your end-effector link name
+  move_group_interface.setPoseTarget(target_pose, "Link16_AxisRx_Toe_Flexion");
 
   // Plan to the target pose
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;

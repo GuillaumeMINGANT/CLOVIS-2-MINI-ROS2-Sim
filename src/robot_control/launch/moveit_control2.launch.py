@@ -30,16 +30,16 @@ def generate_launch_description():
 
     # Use xacro to process the file
     xacro_file = os.path.join(
-        share_dir, "urdf", "r5a_v_ros.urdf.xacro"
+        share_dir, "urdf", "clovis2mini.urdf.xacro"
     )  # Full path to the XACRO file
 
     # MoveIt configuration using MoveItConfigsBuilder
     moveit_config = (
-        MoveItConfigsBuilder("robot_moveit_config", package_name="robot_moveit_config")
+        MoveItConfigsBuilder("CLOVIS2Mini", package_name="robot_moveit_config")
         .robot_description(
             file_path=xacro_file, mappings={"use_sim_time": "true"}
         )
-        .robot_description_semantic("config/armr5.srdf")
+        .robot_description_semantic("config/clovis2mini.srdf")
         .robot_description_kinematics("config/kinematics.yaml")
         .joint_limits("config/joint_limits.yaml")
         .trajectory_execution("config/moveit_controllers.yaml")

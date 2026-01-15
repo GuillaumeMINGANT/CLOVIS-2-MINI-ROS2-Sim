@@ -54,15 +54,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        R5A_link1:
+        base_link_R0_HipsWaist_Yaw:
           Value: false
-        R5A_link2:
+        LinkR0_AxisRz_Waist_Yaw:
           Value: false
-        R5A_link3:
+        Link1_AxisRx_Waist_Roll:
           Value: false
-        R5A_link4:
+        Link2_AxisRy_Abs_Pitch:
           Value: false
-        R5A_link5:
+        Link2_AxisRy_Abs_Pitch:
           Value: false
         aruco_10:
           Value: true
@@ -126,11 +126,11 @@ Visualization Manager:
           aruco_6:
             {}
           base_link:
-            R5A_link1:
-              R5A_link2:
-                R5A_link3:
-                  R5A_link4:
-                    R5A_link5:
+            base_link_R0_HipsWaist_Yaw:
+              LinkR0_AxisRz_Waist_Yaw:
+                Link1_AxisRx_Waist_Roll:
+                  Link2_AxisRy_Abs_Pitch:
+                    Link2_AxisRy_Abs_Pitch:
                       {}
                     aruco_plane_12:
                       {}

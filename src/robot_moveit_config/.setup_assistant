@@ -1,9 +1,9 @@
 moveit_setup_assistant_config:
   urdf:
     package: robot_description
-    relative_path: urdf/r5a_v_ros.urdf.xacro
+    relative_path: urdf/clovis2mini.urdf.xacro
   srdf:
-    relative_path: config/armr5.srdf
+    relative_path: config/clovis2mini.srdf
   package_settings:
     author_name: eliott_matt
     author_email: mail@mail.com

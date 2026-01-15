@@ -40,7 +40,7 @@ def generate_launch_description():
 
     # Use xacro to process the file
     xacro_file = os.path.join(
-        share_dir, "urdf", "r5a_v_ros.urdf.xacro"
+        share_dir, "urdf", "clovis2mini.urdf.xacro"
     )  # Full path to the XACRO file
     robot_description_xacro = xacro.process_file(xacro_file)  # Process the XACRO file
     robot_urdf = (
@@ -66,7 +66,7 @@ def generate_launch_description():
             "-topic",
             "/robot_description",
             "-entity",
-            "armr5",
+            "CLOVIS2Mini",
         ],  # Arguments for spawning
         output="screen",
     )
@@ -94,15 +94,39 @@ def generate_launch_description():
         output="screen",
     )
 
-    load_arm_controller = ExecuteProcess(
+    load_torso_controller = ExecuteProcess(
         cmd=[
             "ros2",
             "control",
             "load_controller",
             "--set-state",
             "active",
-            "arm_controller",
-        ],  # Command to load and activate arm_controller
+            "torso_controller",
+        ],  # Command to load and activate torso_controller
+        output="screen",
+    )
+
+    load_left_leg_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "left_leg_controller",
+        ],  # Command to load and activate left_leg_controller
+        output="screen",
+    )
+
+    load_right_leg_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "right_leg_controller",
+        ],  # Command to load and activate right_leg_controller
         output="screen",
     )
 
@@ -121,7 +145,19 @@ def generate_launch_description():
             RegisterEventHandler(
                 event_handler=OnProcessExit(
                     target_action=load_joint_states_controller,
-                    on_exit=[load_arm_controller],
+                    on_exit=[load_torso_controller],
+                )
+            ),
+            RegisterEventHandler(
+                event_handler=OnProcessExit(
+                    target_action=load_torso_controller,
+                    on_exit=[load_left_leg_controller],
+                )
+            ),
+            RegisterEventHandler(
+                event_handler=OnProcessExit(
+                    target_action=load_left_leg_controller,
+                    on_exit=[load_right_leg_controller],
                 )
             ),
         ]

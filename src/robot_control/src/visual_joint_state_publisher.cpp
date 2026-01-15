@@ -101,8 +101,9 @@ VisualJointStatePublisher::VisualJointStatePublisher()
   this->declare_parameter<std::string>(
       "camera_config_file", "src/robot_control/config/transform.yaml");
   this->declare_parameter<std::vector<std::string>>(
-      "joint_names", std::vector<std::string>{"R0_Yaw", "R1_Pitch", "R2_Pitch",
-                                              "R3_Yaw", "R4_Pitch"});
+      "joint_names",
+      std::vector<std::string>{"R0_AxisRz_Waist_Yaw", "R1_AxisRx_Waist_Roll",
+                               "R2_AxisRy_Abs_Pitch"});
 
   std::string config_file = this->get_parameter("config_file").as_string();
   std::string camera_config_file =
@@ -258,8 +259,9 @@ void VisualJointStatePublisher::timer_callback() {
   }
 
   // Define required links for joint angle computation
-  std::vector<std::string> required_links = {"R5A_link1", "R5A_link2",
-                                             "R5A_link3", "R5A_link4"};
+  std::vector<std::string> required_links = {
+      "LinkR0_AxisRz_Waist_Yaw", "Link1_AxisRx_Waist_Roll",
+      "Link2_AxisRy_Abs_Pitch"};
   std::vector<tf2::Transform> link_transforms;
 
   // Check and collect transforms for required links
@@ -290,34 +292,22 @@ void VisualJointStatePublisher::timer_callback() {
         link_transforms[0].inverse() * link_transforms[1];
     tf2::Transform link2_to_link3 =
         link_transforms[1].inverse() * link_transforms[2];
-    tf2::Transform link3_to_link4 =
-        link_transforms[2].inverse() * link_transforms[3];
 
     // Compute joint angles constrained to specific axes
     double R0_Yaw_angle = get_rotation_angle_about_axis(
-        base_to_link1.getRotation(), tf2::Vector3(0, 1, 0));
-    double R1_Pitch_angle = get_rotation_angle_about_axis(
+        base_to_link1.getRotation(), tf2::Vector3(0, 0, 1));
+    double R1_Roll_angle = get_rotation_angle_about_axis(
         link1_to_link2.getRotation(), tf2::Vector3(1, 0, 0));
     double R2_Pitch_angle = get_rotation_angle_about_axis(
-        link2_to_link3.getRotation(), tf2::Vector3(1, 0, 0));
-    double R3_Yaw_angle = get_rotation_angle_about_axis(
-        link3_to_link4.getRotation(), tf2::Vector3(0, -1, 0));
-
-    // Correct R0_Yaw angle by adding Pi
-    R0_Yaw_angle += M_PI;
-    if (R0_Yaw_angle > M_PI) {
-      R0_Yaw_angle -= 2 * M_PI; // Normalize the angle to the range [-π, π]
-    }
+        link2_to_link3.getRotation(), tf2::Vector3(0, 1, 0));
 
     // Assign joint angles
     std::vector<double> joint_positions(joint_names_.size(),
                                         0.0); // Initialize with zeros
-    if (joint_names_.size() >= 4) {
+    if (joint_names_.size() >= 3) {
       joint_positions[0] = R0_Yaw_angle;
-      joint_positions[1] = R1_Pitch_angle;
+      joint_positions[1] = R1_Roll_angle;
       joint_positions[2] = R2_Pitch_angle;
-      joint_positions[3] = R3_Yaw_angle;
-      // R4_Pitch remains 0.0 as there are no markers for it
     } else {
       RCLCPP_ERROR(this->get_logger(),
                    "Joint names vector is smaller than expected.");

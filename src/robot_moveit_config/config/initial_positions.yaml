@@ -1,14 +1,20 @@
-# Default initial positions for armr5's ros2_control fake system
+# Default initial positions for CLOVIS2Mini's ros2_control fake system
 
 initial_positions:
-  R0_Yaw: 0.0
-  R1_Pitch: 0.0
-  R2_Pitch: 0.0
-  R3_Yaw: 0.0
-  R4_Pitch: 0.0
-  ServoGear: 0.0
-  LeftGripper: 0.0
-  LeftPivotArm: 0.0
-  PassifGear: 0.0
-  RightGripper: 0.0
-  RightPivotArm: 0.0
+  R0_AxisRz_Waist_Yaw: 0.0
+  R1_AxisRx_Waist_Roll: 0.0
+  R2_AxisRy_Abs_Pitch: 0.0
+  R10_AxisRy_Hips_Flexion: 0.0
+  R11_AxisRx_Hips_Abduction: 0.0
+  R12_AxisRz_Hips_Rotation: 0.0
+  R13_AxisRy_Knee_Flexion: 0.0
+  R14_AxisRy_Ankle_Flexion: 0.0
+  R15_AxisRx_Ankle_Abduction: 0.0
+  R16_AxisRx_Toe_Flexion: 0.0
+  R20_AxisRy_Hips_Flexion: 0.0
+  R21_AxisRx_Hips_Abduction: 0.0
+  R22_AxisRz_Hips_Rotation: 0.0
+  R23_AxisRy_Knee_Flexion: 0.0
+  R24_AxisRy_Ankle_Flexion: 0.0
+  R25_AxisRx_Ankle_Abduction: 0.0
+  R26_AxisRx_Toe_Flexion: 0.0

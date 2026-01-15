@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="CLOVIS2Mini">
+  <group name="torso">
+    <chain base_link="base_link_R0_HipsWaist_Yaw" tip_link="Link2_AxisRy_Abs_Pitch"/>
+  </group>
+  <group name="left_leg">
+    <chain base_link="base_link_R0_HipsWaist_Yaw" tip_link="Link16_AxisRx_Toe_Flexion"/>
+  </group>
+  <group name="right_leg">
+    <chain base_link="base_link_R0_HipsWaist_Yaw" tip_link="Link26_AxisRx_Toe_Flexion"/>
+  </group>
+
+  <group_state name="home" group="torso">
+    <joint name="R0_AxisRz_Waist_Yaw" value="0"/>
+    <joint name="R1_AxisRx_Waist_Roll" value="0"/>
+    <joint name="R2_AxisRy_Abs_Pitch" value="0"/>
+  </group_state>
+  <group_state name="home" group="left_leg">
+    <joint name="R10_AxisRy_Hips_Flexion" value="0"/>
+    <joint name="R11_AxisRx_Hips_Abduction" value="0"/>
+    <joint name="R12_AxisRz_Hips_Rotation" value="0"/>
+    <joint name="R13_AxisRy_Knee_Flexion" value="0"/>
+    <joint name="R14_AxisRy_Ankle_Flexion" value="0"/>
+    <joint name="R15_AxisRx_Ankle_Abduction" value="0"/>
+    <joint name="R16_AxisRx_Toe_Flexion" value="0"/>
+  </group_state>
+  <group_state name="home" group="right_leg">
+    <joint name="R20_AxisRy_Hips_Flexion" value="0"/>
+    <joint name="R21_AxisRx_Hips_Abduction" value="0"/>
+    <joint name="R22_AxisRz_Hips_Rotation" value="0"/>
+    <joint name="R23_AxisRy_Knee_Flexion" value="0"/>
+    <joint name="R24_AxisRy_Ankle_Flexion" value="0"/>
+    <joint name="R25_AxisRx_Ankle_Abduction" value="0"/>
+    <joint name="R26_AxisRx_Toe_Flexion" value="0"/>
+  </group_state>
+
+  <virtual_joint name="world_to_base" type="fixed" parent_frame="world" child_link="base_link"/>
+</robot>

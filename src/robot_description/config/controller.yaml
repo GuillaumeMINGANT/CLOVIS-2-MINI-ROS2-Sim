@@ -3,16 +3,19 @@ controller_manager:
     update_rate: 100 #Hz
     use_sim_time: true
 
-    arm_controller:
+    torso_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
-    gripper_controller:
+    left_leg_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    right_leg_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-arm_controller:
+torso_controller:
   ros__parameters:
     command_interfaces:
       - position
@@ -20,60 +23,91 @@ arm_controller:
       - position
       - velocity
     joints:
-      - R0_Yaw
-      - R1_Pitch
-      - R2_Pitch
-      - R3_Yaw
-      - R4_Pitch
+      - R0_AxisRz_Waist_Yaw
+      - R1_AxisRx_Waist_Roll
+      - R2_AxisRy_Abs_Pitch
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
 
-    state_publish_rate: 50.0 # Defaults to 50
-    action_monitor_rate: 20.0 # Defaults to 20
-
-    allow_partial_joints_goal: true # Defaults to false
+    allow_partial_joints_goal: true
     hardware_state_has_offset: true
     deduce_states_from_derivatives: true
 
     constraints:
-      stopped_velocity_tolerance: 0.01 # Defaults to 0.01
-      goal_time: 0.0 # Defaults to 0.0 (start immediately)
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
 
     gains:
-      R0_Yaw: {p: 100.0, i: 0.01, d: 1.0}
-      R1_Pitch: {p: 100.0, i: 0.01, d: 1.0}
-      R2_Pitch: {p: 100.0, i: 0.01, d: 1.0}
-      R3_Yaw: {p: 100.0, i: 0.01, d: 1.0}
-      R4_Pitch: {p: 100.0, i: 0.01, d: 1.0}
+      R0_AxisRz_Waist_Yaw: {p: 100.0, i: 0.01, d: 1.0}
+      R1_AxisRx_Waist_Roll: {p: 100.0, i: 0.01, d: 1.0}
+      R2_AxisRy_Abs_Pitch: {p: 100.0, i: 0.01, d: 1.0}
 
-gripper_controller:
+left_leg_controller:
   ros__parameters:
-    joints:
-      - ServoGear
-      - LeftGripper
-      - LeftPivotArm
-      - PassifGear
-      - RightGripper
-      - RightPivotArm
     command_interfaces:
       - position
     state_interfaces:
       - position
       - velocity
+    joints:
+      - R10_AxisRy_Hips_Flexion
+      - R11_AxisRx_Hips_Abduction
+      - R12_AxisRz_Hips_Rotation
+      - R13_AxisRy_Knee_Flexion
+      - R14_AxisRy_Ankle_Flexion
+      - R15_AxisRx_Ankle_Abduction
+      - R16_AxisRx_Toe_Flexion
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
 
-    state_publish_rate: 50.0 # Defaults to 50
-    action_monitor_rate: 20.0 # Defaults to 20
-
-    allow_partial_joints_goal: true # Defaults to false
+    allow_partial_joints_goal: true
     hardware_state_has_offset: true
     deduce_states_from_derivatives: true
 
     constraints:
-      stopped_velocity_tolerance: 0.01 # Defaults to 0.01
-      goal_time: 0.0 # Defaults to 0.0 (start immediately)
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
 
     gains:
-      ServoGear: {p: 100.0, i: 0.01, d: 1.0}
-      LeftGripper: {p: 100.0, i: 0.01, d: 1.0}
-      LeftPivotArm: {p: 100.0, i: 0.01, d: 1.0}
-      PassifGear: {p: 100.0, i: 0.01, d: 1.0}
-      RightGripper: {p: 100.0, i: 0.01, d: 1.0}
-      RightPivotArm: {p: 100.0, i: 0.01, d: 1.0}
+      R10_AxisRy_Hips_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+      R11_AxisRx_Hips_Abduction: {p: 100.0, i: 0.01, d: 1.0}
+      R12_AxisRz_Hips_Rotation: {p: 100.0, i: 0.01, d: 1.0}
+      R13_AxisRy_Knee_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+      R14_AxisRy_Ankle_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+      R15_AxisRx_Ankle_Abduction: {p: 100.0, i: 0.01, d: 1.0}
+      R16_AxisRx_Toe_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+
+right_leg_controller:
+  ros__parameters:
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    joints:
+      - R20_AxisRy_Hips_Flexion
+      - R21_AxisRx_Hips_Abduction
+      - R22_AxisRz_Hips_Rotation
+      - R23_AxisRy_Knee_Flexion
+      - R24_AxisRy_Ankle_Flexion
+      - R25_AxisRx_Ankle_Abduction
+      - R26_AxisRx_Toe_Flexion
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+
+    allow_partial_joints_goal: true
+    hardware_state_has_offset: true
+    deduce_states_from_derivatives: true
+
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
+
+    gains:
+      R20_AxisRy_Hips_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+      R21_AxisRx_Hips_Abduction: {p: 100.0, i: 0.01, d: 1.0}
+      R22_AxisRz_Hips_Rotation: {p: 100.0, i: 0.01, d: 1.0}
+      R23_AxisRy_Knee_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+      R24_AxisRy_Ankle_Flexion: {p: 100.0, i: 0.01, d: 1.0}
+      R25_AxisRx_Ankle_Abduction: {p: 100.0, i: 0.01, d: 1.0}
+      R26_AxisRx_Toe_Flexion: {p: 100.0, i: 0.01, d: 1.0}

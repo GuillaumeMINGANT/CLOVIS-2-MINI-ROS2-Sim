@@ -57,41 +57,38 @@ def generate_launch_description():
     moveit_config_pkg_path = get_package_share_directory(robot_moveit_config)  # Path to the MoveIt config package
 
     # Load and process URDF/XACRO file
-    xacro_file = os.path.join(share_dir, "urdf", "r5a_v_ros.urdf.xacro")  # Path to the XACRO file
+    xacro_file = os.path.join(share_dir, "urdf", "clovis2mini.urdf.xacro")  # Path to the XACRO file
     robot_description_config = xacro.process_file(xacro_file)  # Process the XACRO file
     robot_description = {"robot_description": robot_description_config.toxml()}  # Convert to XML format
 
     # Joint positions parameter (Define your joint positions here)
     joint_positions = [
-        # Position 0: Home position
-        0.0, 0.0, 0.0, 0.0, 0.0,
+        # Position 0: Home position (left leg)
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
-        # Position 1: Extend first joint (Base rotation)
-        0.5, 0.0, 0.0, 0.0, 0.0,
+        # Position 1: Hip flexion
+        0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
-        # Position 2: Extend second joint (Shoulder)
-        0.0, 0.5, 0.0, 0.0, 0.0,
+        # Position 2: Hip abduction
+        0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0,
 
-        # Position 3: Extend third joint (Elbow)
-        0.0, 0.0, 0.5, 0.0, 0.0,
+        # Position 3: Hip rotation
+        0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0,
 
-        # Position 4: Extend fourth joint (Wrist pitch)
-        0.0, 0.0, 0.0, 0.5, 0.0,
+        # Position 4: Knee flexion
+        0.0, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0,
 
-        # Position 5: Extend fifth joint (Wrist roll)
-        0.0, 0.0, 0.0, 0.0, 0.5,
+        # Position 5: Ankle flexion
+        0.0, 0.0, 0.0, 0.0, 0.3, 0.0, 0.0,
 
-        # Position 6: All joints at positive quarter range
-        0.25, 0.25, 0.25, 0.25, 0.25,
+        # Position 6: Toe flexion
+        0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2,
 
-        # Position 7: All joints at negative quarter range
-        -0.25, -0.25, -0.25, -0.25, -0.25,
+        # Position 7: Combined small motion
+        0.2, 0.1, 0.1, 0.3, 0.2, 0.1, 0.1,
 
-        # Position 8: Alternate joints positive and negative
-        0.5, -0.5, 0.5, -0.5, 0.5,
-
-        # Position 9: Arm Pointing towards Camera 1
-        1.5, -1.5, 0.0, 0.0, 0.0,
+        # Position 8: Combined negative motion
+        -0.2, -0.1, -0.1, -0.3, -0.2, -0.1, -0.1,
     ]
 
     # Test type parameter
@@ -124,16 +121,16 @@ def generate_launch_description():
     spawn_entity = Node(
         package="gazebo_ros",
         executable="spawn_entity.py",
-        arguments=["-topic", "/robot_description", "-entity", "armr5"],
+        arguments=["-topic", "/robot_description", "-entity", "CLOVIS2Mini"],
         output="screen",
     )
 
     # MoveIt Configuration
     moveit_config = (
-        MoveItConfigsBuilder(robot_moveit_config, package_name=robot_moveit_config)
+        MoveItConfigsBuilder("CLOVIS2Mini", package_name=robot_moveit_config)
         .robot_description(file_path=xacro_file, mappings={"use_sim_time": "true"})
         .robot_description_semantic(
-            os.path.join(moveit_config_pkg_path, "config", "armr5.srdf")
+            os.path.join(moveit_config_pkg_path, "config", "clovis2mini.srdf")
         )
         .robot_description_kinematics(
             os.path.join(moveit_config_pkg_path, "config", "kinematics.yaml")
@@ -169,14 +166,38 @@ def generate_launch_description():
         output="screen",
     )
 
-    load_arm_controller = ExecuteProcess(
+    load_torso_controller = ExecuteProcess(
         cmd=[
             "ros2",
             "control",
             "load_controller",
             "--set-state",
             "active",
-            "arm_controller",
+            "torso_controller",
+        ],
+        output="screen",
+    )
+
+    load_left_leg_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "left_leg_controller",
+        ],
+        output="screen",
+    )
+
+    load_right_leg_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "right_leg_controller",
         ],
         output="screen",
     )
@@ -243,12 +264,24 @@ def generate_launch_description():
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=load_joint_state_controller,
-                on_exit=[load_arm_controller],
+                on_exit=[load_torso_controller],
             )
         ),
         RegisterEventHandler(
             event_handler=OnProcessExit(
-                target_action=load_arm_controller,
+                target_action=load_torso_controller,
+                on_exit=[load_left_leg_controller],
+            )
+        ),
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=load_left_leg_controller,
+                on_exit=[load_right_leg_controller],
+            )
+        ),
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=load_right_leg_controller,
                 on_exit=[move_group_node],
             )
         ),

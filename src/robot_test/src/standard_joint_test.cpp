@@ -2,9 +2,9 @@
 #include <moveit/move_group_interface/move_group_interface.h>
 
 /**
- * @brief A ROS2 node that moves the robot arm through a sequence of predefined joint configurations.
+ * @brief A ROS2 node that moves a humanoid leg through a sequence of predefined joint configurations.
  *
- * This node is designed to perform a standard test by moving the robotic arm to different joint angles
+ * This node is designed to perform a standard test by moving the humanoid leg to different joint angles
  * configurations one after the other. The test is repeatable and can be used to collect consistent data
  * across multiple runs.
  */
@@ -25,8 +25,8 @@ int main(int argc, char** argv)
     return 1;
   }
 
-  // Assuming the robot has 5 joints
-  const size_t num_joints = 5;
+  // Assuming the left leg has 7 joints
+  const size_t num_joints = 7;
   if (joint_positions_flat.size() % num_joints != 0)
   {
     RCLCPP_ERROR(node->get_logger(), "Parameter 'joint_positions' size is not a multiple of %zu.", num_joints);
@@ -41,8 +41,8 @@ int main(int argc, char** argv)
     joint_goals.push_back(joint_values);
   }
 
-  // Create the MoveGroupInterface for controlling the robot arm
-  static const std::string PLANNING_GROUP = "arm";
+  // Create the MoveGroupInterface for controlling the humanoid robot leg
+  static const std::string PLANNING_GROUP = "left_leg";
   moveit::planning_interface::MoveGroupInterface move_group(node, PLANNING_GROUP);
 
   // Iterate over the joint configurations

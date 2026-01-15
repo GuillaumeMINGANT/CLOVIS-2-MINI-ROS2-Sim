@@ -46,7 +46,7 @@ def generate_launch_description():
 
     # Load and process URDF/XACRO file
     xacro_file = os.path.join(
-        share_dir, "urdf", "r5a_v_ros.urdf.xacro"
+        share_dir, "urdf", "clovis2mini.urdf.xacro"
     )  # Path to the XACRO file
     robot_description_config = xacro.process_file(xacro_file)  # Process the XACRO file
     robot_description = {
@@ -79,16 +79,16 @@ def generate_launch_description():
     spawn_entity = Node(
         package="gazebo_ros",
         executable="spawn_entity.py",
-        arguments=["-topic", "/robot_description", "-entity", "armr5"],
+        arguments=["-topic", "/robot_description", "-entity", "CLOVIS2Mini"],
         output="screen",
     )
 
     # MoveIt Configuration
     moveit_config = (
-        MoveItConfigsBuilder(robot_moveit_config, package_name=robot_moveit_config)
+        MoveItConfigsBuilder("CLOVIS2Mini", package_name=robot_moveit_config)
         .robot_description(file_path=xacro_file, mappings={"use_sim_time": "true"})
         .robot_description_semantic(
-            os.path.join(moveit_config_pkg_path, "config", "armr5.srdf")
+            os.path.join(moveit_config_pkg_path, "config", "clovis2mini.srdf")
         )
         .robot_description_kinematics(
             os.path.join(moveit_config_pkg_path, "config", "kinematics.yaml")
@@ -124,14 +124,38 @@ def generate_launch_description():
         output="screen",
     )
 
-    load_arm_controller = ExecuteProcess(
+    load_torso_controller = ExecuteProcess(
         cmd=[
             "ros2",
             "control",
             "load_controller",
             "--set-state",
             "active",
-            "arm_controller",
+            "torso_controller",
+        ],
+        output="screen",
+    )
+
+    load_left_leg_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "left_leg_controller",
+        ],
+        output="screen",
+    )
+
+    load_right_leg_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "right_leg_controller",
         ],
         output="screen",
     )
@@ -161,12 +185,24 @@ def generate_launch_description():
             RegisterEventHandler(
                 event_handler=OnProcessExit(
                     target_action=load_joint_state_controller,
-                    on_exit=[load_arm_controller],
+                    on_exit=[load_torso_controller],
                 )
             ),
             RegisterEventHandler(
                 event_handler=OnProcessExit(
-                    target_action=load_arm_controller,
+                    target_action=load_torso_controller,
+                    on_exit=[load_left_leg_controller],
+                )
+            ),
+            RegisterEventHandler(
+                event_handler=OnProcessExit(
+                    target_action=load_left_leg_controller,
+                    on_exit=[load_right_leg_controller],
+                )
+            ),
+            RegisterEventHandler(
+                event_handler=OnProcessExit(
+                    target_action=load_right_leg_controller,
                     on_exit=[move_group_node],
                 )
             ),
