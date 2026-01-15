@@ -1,7 +1,7 @@
 # Robotic Arm Simulation with ROS2 Humble
 
 <p align="center">
-  <img src="images/rviz_view.png" alt="Robotic Arm" />
+  <img src="images/rviz_view.png" alt="Robot torso" />
 </p>
 
 ## Table of Contents
@@ -20,13 +20,16 @@
 
 ## Project Description
 
-This project simulates and controls a robotic arm using **ROS2 Humble**, **Gazebo**, and **MoveIt2**. The robotic arm is defined using URDF (Unified Robot Description Format) and is capable of executing planned trajectories within a simulated environment. The simulation integrates ROS2 control with MoveIt2 for advanced motion planning and trajectory execution. Additionally, the robotic arm is controlled using a camera and ArUco markers placed on the robot, workspace, and objects, enabling precise object pick and place operations through image processing and computer vision techniques.
+This project is a quick prototype for a software to simulate and control robots with humanoid form factor (**ROS2 Humble**, **Gazebo**, and **MoveIt2** on and **Ubuntu 22.04**). 
+The robot is defined using URDF (Unified Robot Description Format) and is capable of executing planned trajectories within a simulated environment. 
+The simulation integrates ROS2 control with MoveIt2 for motion planning and trajectory execution. 
+Additionally, the robot integrate several sensors, like a camera for precise object pick and place operations through image processing and computer vision techniques.
 
 ## Features
 
 - **Simulation Environment**: Realistic simulation using Gazebo.
 - **Motion Planning**: Advanced trajectory planning with MoveIt2.
-- **Control Mechanism**: Camera-based control using ArUco markers.
+- **Control Mechanism**: Camera-based control.
 - **Object Manipulation**: Pick and place objects within the simulated workspace.
 - **Camera Calibration**: Accurate camera setup for reliable image processing.
 - **Modular Design**: Integration of Python and C++ for flexibility and performance.
@@ -251,4 +254,4 @@ This project is licensed under the MIT License.
 
 ---
 
-*Developed by [Eliott, Omar & Matthieu - ABMI Groupe](https://github.com/ABMI-software/Robot5A-Simulation)*
+*Developed by [Guillaume MINGANT], based on previous work ([Eliott, Omar, Matthieu, Chloé, Kenji, José - ABMI Groupe](https://github.com/ABMI-software/Robot5A-Simulation)*
