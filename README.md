@@ -206,7 +206,6 @@ The project is structured into several key components:
 - **Python**: Scripting and automation.
 - **C++**: Performance-critical components.
 - **OpenCV**: Image processing and computer vision.
-- **ArUco**: Marker-based tracking.
 
 ## Contributing
 
@@ -254,4 +253,4 @@ This project is licensed under the MIT License.
 
 ---
 
-*Developed by [Guillaume MINGANT], based on previous work ([Eliott, Omar, Matthieu, Chloé, Kenji, José - ABMI Groupe](https://github.com/ABMI-software/Robot5A-Simulation)*
+*[Developed by Guillaume MINGANT, special thanks to Eliott, Omar, Matthieu, Chloé, Kenji, José - ABMI Groupe](https://github.com/ABMI-software/Robot5A-Simulation)*
