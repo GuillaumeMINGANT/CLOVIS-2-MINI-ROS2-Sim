@@ -1,4 +1,4 @@
-# Robotic Arm Simulation with ROS2 Humble
+# Humanoid Robot Simulation on ROS2 Humble
 
 <p align="center">
   <img src="images/rviz_view.png" alt="Robot torso" />
