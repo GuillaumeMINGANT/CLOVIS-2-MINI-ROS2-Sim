@@ -1,7 +1,7 @@
 # Humanoid Robot Simulation on ROS2 Humble
 
 <p align="center">
-  <img src="images/SOLIDWORKS_view.png" alt="Robot torso" />
+  <img src="images/URDF_WithoutHand.png" alt="Robot Urdf view in https://viewer.robotsfan.com/" />
 </p>
 
 ## Table of Contents
