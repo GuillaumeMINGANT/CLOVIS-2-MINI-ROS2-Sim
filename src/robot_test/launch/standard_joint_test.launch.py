@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 @file standard_joint_test.launch.py
-@brief Launch file for running standard joint tests with visual servoing components.
+@brief Launch file for running standard joint tests.
 
 This launch file initializes the robot simulation in Gazebo with a custom world that includes a spotlight,
 spawns the robot entity, sets up the MoveIt configuration, and starts the necessary nodes and controllers
-for the robot operation, including visual servoing components like the ArUco detector and aruco error logger nodes.
-It accepts a parameter 'num_cameras' to determine whether to launch the single or double ArUco detector.
+for the robot operation.
 """
 
 import os
@@ -16,39 +15,24 @@ from launch.actions import (
     IncludeLaunchDescription,
     ExecuteProcess,
     RegisterEventHandler,
-    DeclareLaunchArgument,
     Shutdown,
 )
 from launch.event_handlers import OnProcessExit, OnProcessStart
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.conditions import IfCondition, UnlessCondition
-from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node, SetParameter
 import xacro
 from moveit_configs_utils import MoveItConfigsBuilder
 
 def generate_launch_description():
     """
-    @brief Generates the launch description for running standard joint tests with visual servoing components.
+    @brief Generates the launch description for running standard joint tests.
 
     This function sets up the robot description, launches Gazebo with a custom world file,
     spawns the robot entity, configures MoveIt, and starts the necessary nodes and controllers,
-    including the ArUco detector nodes and aruco error logger node.
-
-    It accepts a parameter 'num_cameras' to determine whether to launch the single or double ArUco detector.
+    including the standard joint test node.
 
     @return LaunchDescription object containing all the nodes and configurations to launch.
     """
-
-    # Declare the 'num_cameras' launch argument
-    num_cameras_arg = DeclareLaunchArgument(
-        'num_cameras',
-        default_value='1',
-        description='Number of cameras (1 or 2)'
-    )
-
-    # Launch configuration to access 'num_cameras' argument
-    num_cameras = LaunchConfiguration('num_cameras')
 
     # Package Directories
     pkg_name = "robot_description"  # Name of the robot description package
@@ -90,9 +74,6 @@ def generate_launch_description():
         # Position 8: Combined negative motion
         -0.2, -0.1, -0.1, -0.3, -0.2, -0.1, -0.1,
     ]
-
-    # Test type parameter
-    test_type = "standard joint test"
 
     # Robot State Publisher Node
     robot_state_publisher_node = Node(
@@ -215,43 +196,8 @@ def generate_launch_description():
         ],
     )
 
-    # Aruco Error Logger Node
-    aruco_error_logger_node = Node(
-        package="robot_test",
-        executable="aruco_error_logger_node",
-        output="screen",
-        parameters=[
-            {"use_sim_time": True},
-            {"joint_positions": joint_positions},
-            {"test_type": test_type},
-        ],
-    )
-
-    # Aruco Detector Single Node
-    aruco_detector_single_node = Node(
-        package="robot_control",
-        executable="aruco_detector_single",
-        output="screen",
-        parameters=[
-            {"use_sim_time": True},
-        ],
-        condition=UnlessCondition(PythonExpression(['"', num_cameras, '" == "2"']))
-    )
-
-    # Aruco Detector Double Node
-    aruco_detector_double_node = Node(
-        package="robot_control",
-        executable="aruco_detector_double",
-        output="screen",
-        parameters=[
-            {"use_sim_time": True},
-        ],
-        condition=IfCondition(PythonExpression(['"', num_cameras, '" == "2"']))
-    )
-
     # Launch Actions
     actions = [
-        num_cameras_arg,  # Added the launch argument
         SetParameter(name="use_sim_time", value=True),
 
         # Event handlers for controller loading
@@ -291,10 +237,7 @@ def generate_launch_description():
             event_handler=OnProcessStart(
                 target_action=move_group_node,
                 on_start=[
-                    aruco_detector_single_node,
-                    aruco_detector_double_node,
                     standard_joint_test_node,
-                    aruco_error_logger_node,
                 ],
             )
         ),

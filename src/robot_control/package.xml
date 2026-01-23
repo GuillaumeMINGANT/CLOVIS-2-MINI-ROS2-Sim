@@ -15,19 +15,13 @@
   <depend>tf2_ros</depend>
   <depend>tf2_geometry_msgs</depend>
   <depend>control_msgs</depend>
-  <depend>cv_bridge</depend>
   <depend>sensor_msgs</depend>
-  <depend>yaml-cpp</depend>
-  <depend>opencv</depend> <!-- Updated dependency -->
-  <depend>eigen3_cmake_module</depend> <!-- Ensure Eigen3 is properly found -->
-  <depend>eigen3</depend> <!-- Added for Eigen3 -->
 
   <!-- Qt5 dependencies -->
   <depend>qtbase5-dev</depend>
   <depend>qt5-qmake</depend>
   <depend>libqt5widgets5</depend>
 
-  <!-- Additional dependencies for visual_joint_state_publisher -->
   <depend>tf2</depend> <!-- Already implicitly included via tf2_ros -->
 
   <!-- Export dependencies -->

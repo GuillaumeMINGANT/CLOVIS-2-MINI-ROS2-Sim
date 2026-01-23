@@ -6,7 +6,6 @@
 #include <sensor_msgs/msg/image.hpp>
 #include <fstream>
 #include <iostream>
-#include <opencv2/aruco.hpp>
 #include <opencv2/opencv.hpp>
 #include <string>
 #include <vector>
