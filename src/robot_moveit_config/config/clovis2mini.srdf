@@ -9,10 +9,16 @@
   <group name="right_leg">
     <chain base_link="base_link_R0_HipsWaist_Yaw" tip_link="Link26_AxisRx_Toe_Flexion"/>
   </group>
+  <group name="left_arm">
+    <chain base_link="Link2_AxisRy_Abs_Pitch" tip_link="Link35_AxisRx_Wrist_Abduction"/>
+  </group>
+  <group name="right_arm">
+    <chain base_link="Link2_AxisRy_Abs_Pitch" tip_link="Link45_AxisRx_Wrist_Abduction"/>
+  </group>
 
   <group_state name="home" group="torso">
     <joint name="R0_AxisRz_Waist_Yaw" value="0"/>
-    <joint name="R1_AxisRx_Waist_Roll" value="0"/>
+    <joint name="R1_AxisRx_Abs_Roll" value="0"/>
     <joint name="R2_AxisRy_Abs_Pitch" value="0"/>
   </group_state>
   <group_state name="home" group="left_leg">
@@ -32,6 +38,22 @@
     <joint name="R24_AxisRy_Ankle_Flexion" value="0"/>
     <joint name="R25_AxisRx_Ankle_Abduction" value="0"/>
     <joint name="R26_AxisRx_Toe_Flexion" value="0"/>
+  </group_state>
+  <group_state name="home" group="left_arm">
+    <joint name="R30_AxisRy_Shoulder_Flexion" value="0"/>
+    <joint name="R31_AxisRz_Shoulder_Rotation" value="0"/>
+    <joint name="R32_AxisRx_Shoulder_Abduction" value="0"/>
+    <joint name="R33_AxisRy_Elbow_Flexion" value="0"/>
+    <joint name="R34_AxisRz_Wrist_Rotation" value="0"/>
+    <joint name="R35_AxisRx_Wrist_Abduction" value="0"/>
+  </group_state>
+  <group_state name="home" group="right_arm">
+    <joint name="R40_AxisRy_Shoulder_Flexion" value="0"/>
+    <joint name="R41_AxisRz_Shoulder_Rotation" value="0"/>
+    <joint name="R42_AxisRx_Shoulder_Abduction" value="0"/>
+    <joint name="R43_AxisRy_Elbow_Flexion" value="0"/>
+    <joint name="R44_AxisRz_Wrist_Rotation" value="0"/>
+    <joint name="R45_AxisRx_Wrist_Abduction" value="0"/>
   </group_state>
 
   <virtual_joint name="world_to_base" type="fixed" parent_frame="world" child_link="base_link"/>

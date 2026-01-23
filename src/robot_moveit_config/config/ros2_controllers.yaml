@@ -12,6 +12,12 @@ controller_manager:
     right_leg_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
+    left_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    right_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
@@ -19,7 +25,7 @@ torso_controller:
   ros__parameters:
     joints:
       - R0_AxisRz_Waist_Yaw
-      - R1_AxisRx_Waist_Roll
+      - R1_AxisRx_Abs_Roll
       - R2_AxisRy_Abs_Pitch
     command_interfaces:
       - position
@@ -51,6 +57,36 @@ right_leg_controller:
       - R24_AxisRy_Ankle_Flexion
       - R25_AxisRx_Ankle_Abduction
       - R26_AxisRx_Toe_Flexion
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+left_arm_controller:
+  ros__parameters:
+    joints:
+      - R30_AxisRy_Shoulder_Flexion
+      - R31_AxisRz_Shoulder_Rotation
+      - R32_AxisRx_Shoulder_Abduction
+      - R33_AxisRy_Elbow_Flexion
+      - R34_AxisRz_Wrist_Rotation
+      - R35_AxisRx_Wrist_Abduction
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+right_arm_controller:
+  ros__parameters:
+    joints:
+      - R40_AxisRy_Shoulder_Flexion
+      - R41_AxisRz_Shoulder_Rotation
+      - R42_AxisRx_Shoulder_Abduction
+      - R43_AxisRy_Elbow_Flexion
+      - R44_AxisRz_Wrist_Rotation
+      - R45_AxisRx_Wrist_Abduction
     command_interfaces:
       - position
     state_interfaces:

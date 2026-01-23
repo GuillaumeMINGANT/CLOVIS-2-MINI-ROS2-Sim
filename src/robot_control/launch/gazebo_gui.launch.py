@@ -79,7 +79,7 @@ def generate_launch_description():
     spawn_entity = Node(
         package="gazebo_ros",
         executable="spawn_entity.py",
-        arguments=["-topic", "/robot_description", "-entity", "CLOVIS2Mini"],
+        arguments=["-topic", "/robot_description", "-entity", "CLOVIS2Mini", "-x", "0", "-y", "0", "-z", "0.5"],
         output="screen",
     )
 
@@ -160,6 +160,30 @@ def generate_launch_description():
         output="screen",
     )
 
+    load_left_arm_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "left_arm_controller",
+        ],
+        output="screen",
+    )
+
+    load_right_arm_controller = ExecuteProcess(
+        cmd=[
+            "ros2",
+            "control",
+            "load_controller",
+            "--set-state",
+            "active",
+            "right_arm_controller",
+        ],
+        output="screen",
+    )
+
     # Launch the GUI Node
     gui_node = Node(
         package="robot_control",  # Package name containing the GUI node
@@ -203,6 +227,18 @@ def generate_launch_description():
             RegisterEventHandler(
                 event_handler=OnProcessExit(
                     target_action=load_right_leg_controller,
+                    on_exit=[load_left_arm_controller],
+                )
+            ),
+            RegisterEventHandler(
+                event_handler=OnProcessExit(
+                    target_action=load_left_arm_controller,
+                    on_exit=[load_right_arm_controller],
+                )
+            ),
+            RegisterEventHandler(
+                event_handler=OnProcessExit(
+                    target_action=load_right_arm_controller,
                     on_exit=[move_group_node],
                 )
             ),

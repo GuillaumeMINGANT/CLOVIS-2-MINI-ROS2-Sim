@@ -7,6 +7,8 @@ moveit_simple_controller_manager:
     - torso_controller
     - left_leg_controller
     - right_leg_controller
+    - left_arm_controller
+    - right_arm_controller
 
   torso_controller:
     type: FollowJointTrajectory
@@ -14,7 +16,7 @@ moveit_simple_controller_manager:
     default: true
     joints:
       - R0_AxisRz_Waist_Yaw
-      - R1_AxisRx_Waist_Roll
+      - R1_AxisRx_Abs_Roll
       - R2_AxisRy_Abs_Pitch
 
   left_leg_controller:
@@ -42,3 +44,27 @@ moveit_simple_controller_manager:
       - R24_AxisRy_Ankle_Flexion
       - R25_AxisRx_Ankle_Abduction
       - R26_AxisRx_Toe_Flexion
+
+  left_arm_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - R30_AxisRy_Shoulder_Flexion
+      - R31_AxisRz_Shoulder_Rotation
+      - R32_AxisRx_Shoulder_Abduction
+      - R33_AxisRy_Elbow_Flexion
+      - R34_AxisRz_Wrist_Rotation
+      - R35_AxisRx_Wrist_Abduction
+
+  right_arm_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - R40_AxisRy_Shoulder_Flexion
+      - R41_AxisRz_Shoulder_Rotation
+      - R42_AxisRx_Shoulder_Abduction
+      - R43_AxisRy_Elbow_Flexion
+      - R44_AxisRz_Wrist_Rotation
+      - R45_AxisRx_Wrist_Abduction

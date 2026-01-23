@@ -1,1048 +1,1747 @@
 <?xml version="1.0" encoding="utf-8"?>
-  <robot name="CLOVIS2Mini" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="CLOVIS2Mini" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <link name="world" />
-    <joint name="base_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <parent link="world" />
-      <child link="base_link" />
-    </joint>
+  <link name="world" />
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
 
-    <link name="base_link" />
-    <joint name="base_link_fixed" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <parent link="base_link" />
-      <child link="base_link_R0_HipsWaist_Yaw" />
-    </joint>
+  <link name="base_link" />
+  <gazebo>
+    <self_collide>false</self_collide>
+  </gazebo>
+  <joint name="base_link_fixed" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="base_link_R0_HipsWaist_Yaw" />
+  </joint>
 
-    <link
-  name="base_link_R0_HipsWaist_Yaw">
-  <inertial>
-    <origin
-      xyz="5.0364E-07 -0.0073562 0.0064621"
-      rpy="0 0 0" />
-    <mass
-      value="0.38744" />
-    <inertia
-      ixx="0.000602"
-      ixy="-8.4057E-09"
-      ixz="3.9044E-09"
-      iyy="0.00059139"
-      iyz="0.00014423"
-      izz="0.00055466" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/base_link_R0_HipsWaist_Yaw.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/base_link_R0_HipsWaist_Yaw.STL" />
-    </geometry>
-  </collision>
-</link>
 <link
-  name="LinkR0_AxisRz_Waist_Yaw">
-  <inertial>
-    <origin
-      xyz="0.0079226 -1.4681E-08 0.032811"
-      rpy="0 0 0" />
-    <mass
-      value="0.074377" />
-    <inertia
-      ixx="5.2774E-05"
-      ixy="-6.4357E-11"
-      ixz="8.6681E-06"
-      iyy="0.00010984"
-      iyz="-1.8069E-11"
-      izz="6.8619E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R0_AxisRz_Waist_Yaw"
-  type="revolute">
-  <origin
-    xyz="0 0 0"
-    rpy="1.5708 -1.5708 0" />
-  <parent
-    link="base_link_R0_HipsWaist_Yaw" />
-  <child
-    link="LinkR0_AxisRz_Waist_Yaw" />
-  <axis
-    xyz="0 0 1" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link1_AxisRx_Waist_Roll">
-  <inertial>
-    <origin
-      xyz="-0.00041904 -2.8944E-05 0.0033473"
-      rpy="0 0 0" />
-    <mass
-      value="0.02857" />
-    <inertia
-      ixx="7.0873E-06"
-      ixy="-2.4583E-09"
-      ixz="-4.7741E-08"
-      iyy="2.3252E-05"
-      iyz="-1.5933E-09"
-      izz="2.6216E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link1_AxisRx_Waist_Roll.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
+    name="base_link_R0_HipsWaist_Yaw">
+    <inertial>
+      <origin
+        xyz="-5.06849795022235E-07 0.00646210878121357 -0.0073561947767718"
+        rpy="0 0 0" />
+      <mass
+        value="0.387437520077023" />
+      <inertia
+        ixx="0.000602004181055371"
+        ixy="-3.93523733518146E-09"
+        ixz="8.41311460772213E-09"
+        iyy="0.000554663199182993"
+        iyz="0.000144231027666502"
+        izz="0.000591393422247619" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="LinkR0_AxisRz_Waist_Yaw">
+    <inertial>
+      <origin
+        xyz="1.4681236456414E-08 0.00792255367963898 0.0328105533698632"
+        rpy="0 0 0" />
+      <mass
+        value="0.0743770113903965" />
+      <inertia
+        ixx="0.000109844902331301"
+        ixy="6.43572844053016E-11"
+        ixz="1.80691197728788E-11"
+        iyy="5.27744826789087E-05"
+        iyz="8.6681121560006E-06"
+        izz="6.86185978836166E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R0_AxisRz_Waist_Yaw"
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link1_AxisRx_Waist_Roll.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R1_AxisRx_Waist_Roll"
-  type="revolute">
-  <origin
-    xyz="0 2.0274E-05 0.083"
-    rpy="0 0 0" />
-  <parent
-    link="LinkR0_AxisRz_Waist_Yaw" />
-  <child
-    link="Link1_AxisRx_Waist_Roll" />
-  <axis
-    xyz="-1 0.00014768 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link2_AxisRy_Abs_Pitch">
-  <inertial>
+    <parent
+      link="base_link_R0_HipsWaist_Yaw" />
+    <child
+      link="LinkR0_AxisRz_Waist_Yaw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.611"
+      upper="0.611"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link1_AxisRx_Abs_Roll">
+    <inertial>
+      <origin
+        xyz="-0.000419037666760606 -8.67044488973194E-06 0.00334728947605621"
+        rpy="0 0 0" />
+      <mass
+        value="0.0285702910432507" />
+      <inertia
+        ixx="7.08725803682833E-06"
+        ixy="-2.45830099310385E-09"
+        ixz="-4.77409616773028E-08"
+        iyy="2.32521875946385E-05"
+        iyz="-1.5933209297635E-09"
+        izz="2.62164733137173E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_AxisRx_Abs_Roll"
+    type="revolute">
     <origin
-      xyz="0.01165 0.00042448 0.099006"
-      rpy="0 0 0" />
-    <mass
-      value="1.7658" />
-    <inertia
-      ixx="0.0027283"
-      ixy="-2.2026E-07"
-      ixz="8.1879E-05"
-      iyy="0.0028642"
-      iyz="4.1069E-07"
-      izz="0.0026221" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link2_AxisRy_Abs_Pitch.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link2_AxisRy_Abs_Pitch.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R2_AxisRy_Abs_Pitch"
-  type="revolute">
-  <origin
-    xyz="0 0 0"
-    rpy="0 0 0" />
-  <parent
-    link="Link1_AxisRx_Waist_Roll" />
-  <child
-    link="Link2_AxisRy_Abs_Pitch" />
-  <axis
-    xyz="0 -1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link10_AxisRy_Hips_Flexion">
-  <inertial>
-    <origin
-      xyz="-0.00091392 -0.035492 0.018195"
-      rpy="0 0 0" />
-    <mass
-      value="0.15462" />
-    <inertia
-      ixx="0.00018303"
-      ixy="-5.9541E-06"
-      ixz="-5.3223E-06"
-      iyy="0.00012928"
-      iyz="-4.7324E-06"
-      izz="7.5248E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link10_AxisRy_Hips_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link10_AxisRy_Hips_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R10_AxisRy_Hips_Flexion"
-  type="revolute">
-  <origin
-    xyz="-0.058997 -0.036813 0"
-    rpy="2.0944 -1.5708 0" />
-  <parent
-    link="base_link_R0_HipsWaist_Yaw" />
-  <child
-    link="Link10_AxisRy_Hips_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link11_AxisRx_Hips_Abduction">
-  <inertial>
-    <origin
-      xyz="0.00042158 -0.010961 -0.047292"
-      rpy="0 0 0" />
-    <mass
-      value="0.16881" />
-    <inertia
-      ixx="0.00011623"
-      ixy="-4.4236E-06"
-      ixz="-8.4034E-07"
-      iyy="0.00014479"
-      iyz="-6.5255E-06"
-      izz="0.00019636" />
-  </inertial>
-  <visual>
+      xyz="0 0 0.0830000000000002"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="LinkR0_AxisRz_Waist_Yaw" />
+    <child
+      link="Link1_AxisRx_Abs_Roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.524"
+      upper="0.524"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link2_AxisRy_Abs_Pitch">
+    <inertial>
+      <origin
+        xyz="0.011650181340946 0.000444755928511933 0.099005739309927"
+        rpy="0 0 0" />
+      <mass
+        value="1.76578959011334" />
+      <inertia
+        ixx="0.00272833770431028"
+        ixy="-2.20264076877396E-07"
+        ixz="8.18791936776388E-05"
+        iyy="0.00286417266365648"
+        iyz="4.10696306321673E-07"
+        izz="0.00262213376829883" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_AxisRy_Abs_Pitch"
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link11_AxisRx_Hips_Abduction.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
+    <parent
+      link="Link1_AxisRx_Abs_Roll" />
+    <child
+      link="Link2_AxisRy_Abs_Pitch" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.689"
+      upper="0.785"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link30_AxisRy_Shoulder_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00121122065822793 -0.00325038076073686 0.0120544903508707"
+        rpy="0 0 0" />
+      <mass
+        value="0.037258013070383" />
+      <inertia
+        ixx="1.59289941290387E-05"
+        ixy="-1.20792452999147E-06"
+        ixz="-4.79405065236246E-07"
+        iyy="1.63933970089758E-05"
+        iyz="-8.02786738789969E-07"
+        izz="2.03149647590168E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R30_AxisRy_Shoulder_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.028926 -0.10137 0.13085"
+      rpy="-0.25268 1.3002 -1.5708" />
+    <parent
+      link="Link2_AxisRy_Abs_Pitch" />
+    <child
+      link="Link30_AxisRy_Shoulder_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link31_AxisRz_Shoulder_Rotation">
+    <inertial>
+      <origin
+        xyz="0.0310376632963731 0.0149615998455133 -0.00284843103933194"
+        rpy="0 0 0" />
+      <mass
+        value="0.0306387760752887" />
+      <inertia
+        ixx="1.91180450287481E-05"
+        ixy="-2.81655737035407E-07"
+        ixz="8.4332813770904E-07"
+        iyy="2.6492735208956E-05"
+        iyz="-1.49756484162903E-07"
+        izz="1.4496990488765E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R31_AxisRz_Shoulder_Rotation"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0185"
+      rpy="1.5708 -1.3181 -1.5708" />
+    <parent
+      link="Link30_AxisRy_Shoulder_Flexion" />
+    <child
+      link="Link31_AxisRz_Shoulder_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link32_AxisRx_Shoulder_Abduction">
+    <inertial>
+      <origin
+        xyz="0.0104532597532817 0.0621634371379193 -0.0367102436813659"
+        rpy="0 0 0" />
+      <mass
+        value="0.102687647799612" />
+      <inertia
+        ixx="0.000190390945153542"
+        ixy="-3.56957896321668E-06"
+        ixz="8.37982664301464E-06"
+        iyy="8.95092182548508E-05"
+        iyz="1.36359033983104E-05"
+        izz="0.000128468014301729" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R32_AxisRx_Shoulder_Abduction"
+    type="revolute">
+    <origin
+      xyz="0.04 0.035 -2.7028E-05"
+      rpy="-1.5708 0.2706 0" />
+    <parent
+      link="Link31_AxisRz_Shoulder_Rotation" />
+    <child
+      link="Link32_AxisRx_Shoulder_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link33_AxisRy_Elbow_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00807277237851878 -0.0218914344602725 2.79175758927108E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0625251367968197" />
+      <inertia
+        ixx="2.66478349568186E-05"
+        ixy="6.31835890192464E-07"
+        ixz="-3.72107714966498E-11"
+        iyy="2.90857170699392E-05"
+        iyz="-2.29725793677034E-10"
+        izz="2.16871210433121E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R33_AxisRy_Elbow_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.01133 0.12951 -0.035"
+      rpy="1.5708 0 -1.6581" />
+    <parent
+      link="Link32_AxisRx_Shoulder_Abduction" />
+    <child
+      link="Link33_AxisRy_Elbow_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link34_AxisRz_Wrist_Rotation">
+    <inertial>
+      <origin
+        xyz="0.000526763744031544 0.000899599310193925 -0.0255225516370396"
+        rpy="0 0 0" />
+      <mass
+        value="0.0957053105367644" />
+      <inertia
+        ixx="5.31202839635959E-05"
+        ixy="-5.32218440953273E-08"
+        ixz="1.77417951497023E-07"
+        iyy="5.30307409764474E-05"
+        iyz="1.14726761692624E-06"
+        izz="3.79616505903183E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R34_AxisRz_Wrist_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.04 -0.019 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="Link33_AxisRy_Elbow_Flexion" />
+    <child
+      link="Link34_AxisRz_Wrist_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link35_AxisRx_Wrist_Abduction">
+    <inertial>
+      <origin
+        xyz="0.00813435863366137 -4.05206364914937E-07 5.46147046198708E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0129110778126473" />
+      <inertia
+        ixx="5.34580369587505E-06"
+        ixy="-1.03772626647592E-10"
+        ixz="6.34307336230873E-11"
+        iyy="1.41876387165846E-06"
+        iyz="-1.77315332016734E-11"
+        izz="5.32098561653809E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R35_AxisRx_Wrist_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.093138"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="Link34_AxisRz_Wrist_Rotation" />
+    <child
+      link="Link35_AxisRx_Wrist_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link40_AxisRy_Shoulder_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00121123558723285 -0.00325052552894149 -0.0120546201896221"
+        rpy="0 0 0" />
+      <mass
+        value="0.0372585040308182" />
+      <inertia
+        ixx="1.5929243956158E-05"
+        ixy="-1.2079683390901E-06"
+        ixz="4.79452740206966E-07"
+        iyy="1.63936933589083E-05"
+        iyz="8.02800974845253E-07"
+        izz="2.03152999256755E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R40_AxisRy_Shoulder_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.028926 0.10137 0.13085"
+      rpy="-2.8889 1.3002 1.5708" />
+    <parent
+      link="Link2_AxisRy_Abs_Pitch" />
+    <child
+      link="Link40_AxisRy_Shoulder_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link41_AxisRz_Shoulder_Rotation">
+    <inertial>
+      <origin
+        xyz="-0.0310375903271902 0.0149616403911208 -0.00284732122647272"
+        rpy="0 0 0" />
+      <mass
+        value="0.0306386899777378" />
+      <inertia
+        ixx="1.91180620092899E-05"
+        ixy="2.81663106916414E-07"
+        ixz="-8.43194951997577E-07"
+        iyy="2.64926204506234E-05"
+        iyz="-1.49808926136601E-07"
+        izz="1.44968161929882E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R41_AxisRz_Shoulder_Rotation"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0185"
+      rpy="-1.5708 -1.3181 1.5708" />
+    <parent
+      link="Link40_AxisRy_Shoulder_Flexion" />
+    <child
+      link="Link41_AxisRz_Shoulder_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link42_AxisRx_Shoulder_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.0104533722346818 0.0621641528020294 -0.0367098346254386"
+        rpy="0 0 0" />
+      <mass
+        value="0.102684755235681" />
+      <inertia
+        ixx="0.000190384776572681"
+        ixy="3.56985267648933E-06"
+        ixz="-8.3801879526611E-06"
+        iyy="8.95074854978071E-05"
+        iyz="1.36363520092154E-05"
+        izz="0.000128462975639967" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R42_AxisRx_Shoulder_Abduction"
+    type="revolute">
+    <origin
+      xyz="-0.04 0.035 0"
+      rpy="-1.5708 -0.2706 0" />
+    <parent
+      link="Link41_AxisRz_Shoulder_Rotation" />
+    <child
+      link="Link42_AxisRx_Shoulder_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link43_AxisRy_Elbow_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00807276861167176 -0.0218914501987285 3.10335104336534E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0625250255443275" />
+      <inertia
+        ixx="2.66478001569367E-05"
+        ixy="6.31836881755708E-07"
+        ixz="-1.39528746475983E-11"
+        iyy="2.90856879898022E-05"
+        iyz="-2.34243123724509E-10"
+        izz="2.16871102082907E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R43_AxisRy_Elbow_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.01133 0.12951 -0.035"
+      rpy="1.5708 0 -1.4835" />
+    <parent
+      link="Link42_AxisRx_Shoulder_Abduction" />
+    <child
+      link="Link43_AxisRy_Elbow_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link44_AxisRz_Wrist_Rotation">
+    <inertial>
+      <origin
+        xyz="-0.000520135717628878 0.000899444805755482 -0.0257687217825808"
+        rpy="0 0 0" />
+      <mass
+        value="0.0957043837946324" />
+      <inertia
+        ixx="5.31198213770589E-05"
+        ixy="4.22873938652312E-08"
+        ixz="-1.80532675919715E-07"
+        iyy="5.30300162856819E-05"
+        iyz="1.14738316178734E-06"
+        izz="3.79612077150471E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R44_AxisRz_Wrist_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.04 -0.019 0"
+      rpy="-1.5782 1.5708 -1.5782" />
+    <parent
+      link="Link43_AxisRy_Elbow_Flexion" />
+    <child
+      link="Link44_AxisRz_Wrist_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link45_AxisRx_Wrist_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.0081343586336614 4.05206364944427E-07 5.46147045366041E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0129110778126476" />
+      <inertia
+        ixx="5.34580369587518E-06"
+        ixy="-1.03772626655751E-10"
+        ixz="-6.3430733621605E-11"
+        iyy="1.41876387165849E-06"
+        iyz="1.77315332141801E-11"
+        izz="5.32098561653821E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R45_AxisRx_Wrist_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0935"
+      rpy="0 1.5708 0" />
+    <parent
+      link="Link44_AxisRz_Wrist_Rotation" />
+    <child
+      link="Link45_AxisRx_Wrist_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link10_AxisRy_Hips_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.035491858736204 0.000913918322320432 0.018194719601768"
+        rpy="0 0 0" />
+      <mass
+        value="0.154615097187712" />
+      <inertia
+        ixx="0.000129284073057894"
+        ixy="5.95413093632001E-06"
+        ixz="-4.73243723374351E-06"
+        iyy="0.000183034354985312"
+        iyz="5.32228933808358E-06"
+        izz="7.52482691085156E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R10_AxisRy_Hips_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.058997 0 -0.036813"
+      rpy="0 -0.5236 3.1416" />
+    <parent
+      link="base_link_R0_HipsWaist_Yaw" />
+    <child
+      link="Link10_AxisRy_Hips_Flexion" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.396"
+      upper="1.396"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link11_AxisRx_Hips_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.000420686937343748 -0.0141524399660883 0.0464372807980134"
+        rpy="0 0 0" />
+      <mass
+        value="0.168812815651825" />
+      <inertia
+        ixx="0.000116232359472686"
+        ixy="-3.412862720292E-06"
+        ixz="-2.94169778032604E-06"
+        iyy="0.000163337696614815"
+        iyz="-2.55918774884189E-05"
+        izz="0.000177818098522985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R11_AxisRx_Hips_Abduction"
+    type="revolute">
+    <origin
+      xyz="-0.0395 0 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Link10_AxisRy_Hips_Flexion" />
+    <child
+      link="Link11_AxisRx_Hips_Abduction" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.436"
+      upper="1.047"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link12_AxisRz_Hips_Rotation">
+    <inertial>
+      <origin
+        xyz="0.029986520986284 0.000915006997885409 0.039584091405729"
+        rpy="0 0 0" />
+      <mass
+        value="0.308889411660343" />
+      <inertia
+        ixx="0.000258352042231295"
+        ixy="-1.20179858895001E-05"
+        ixz="-2.22319994921139E-05"
+        iyy="0.000446775467586572"
+        iyz="2.53945341205302E-05"
+        izz="0.000299366843256735" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R12_AxisRz_Hips_Rotation"
+    type="revolute">
+    <origin
+      xyz="0.000499999999999946 -0.0407499999999995 0.0705810704084321"
+      rpy="-0.523598775598292 0 3.14159265358979" />
+    <parent
+      link="Link11_AxisRx_Hips_Abduction" />
+    <child
+      link="Link12_AxisRz_Hips_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.222"
+      upper="1.571"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link13_AxisRy_Knee_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00996165884627892 -3.95525887111892E-07 -0.0737094687999738"
+        rpy="0 0 0" />
+      <mass
+        value="0.20810093518798" />
+      <inertia
+        ixx="0.000251269487093237"
+        ixy="8.57301270372869E-11"
+        ixz="5.37344393723929E-06"
+        iyy="0.000240506181571733"
+        iyz="1.05076277997316E-09"
+        izz="7.36271056526118E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R13_AxisRy_Knee_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0.036"
+      rpy="3.14159265358979 0 -3.14159265358979" />
+    <parent
+      link="Link12_AxisRz_Hips_Rotation" />
+    <child
+      link="Link13_AxisRy_Knee_Flexion" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="2.094"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link14_AxisRy_Ankle_Flexion">
+    <inertial>
+      <origin
+        xyz="4.88789106049052E-05 -4.22901893046279E-07 -0.000941696331463626"
+        rpy="0 0 0" />
+      <mass
+        value="0.0198828974134902" />
+      <inertia
+        ixx="5.33136120702503E-06"
+        ixy="5.67526433354193E-11"
+        ixz="6.76121728274688E-09"
+        iyy="3.84427573974655E-06"
+        iyz="4.0294964544253E-12"
+        izz="8.29733415735584E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R14_AxisRy_Ankle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.14"
+      rpy="0 0 0" />
+    <parent
+      link="Link13_AxisRy_Knee_Flexion" />
+    <child
+      link="Link14_AxisRy_Ankle_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.96"
+      upper="0.698"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link15_AxisRx_Ankle_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.00749525839369256 -1.00190964788527E-07 -0.0413958069840308"
+        rpy="0 0 0" />
+      <mass
+        value="0.162069791623735" />
+      <inertia
+        ixx="8.37583833186822E-05"
+        ixy="9.35731632633514E-11"
+        ixz="5.76979843466876E-06"
+        iyy="0.000111745804529979"
+        iyz="5.476438000541E-10"
+        izz="0.000127010438609888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R15_AxisRx_Ankle_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="Link14_AxisRy_Ankle_Flexion" />
+    <child
+      link="Link15_AxisRx_Ankle_Abduction" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.96"
+      upper="0.96"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link16_AxisRx_Toe_Flexion">
+    <inertial>
+      <origin
+        xyz="0.0181977115240334 0.00126288994199182 -0.00954659053967732"
+        rpy="0 0 0" />
+      <mass
+        value="0.0664189830579757" />
+      <inertia
+        ixx="3.95754215658761E-05"
+        ixy="-1.398387168666E-06"
+        ixz="4.60537840513916E-06"
+        iyy="2.87049416190121E-05"
+        iyz="-1.28510150088002E-07"
+        izz="5.6352915404693E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R16_AxisRx_Toe_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.055 0 -0.0425"
+      rpy="0 0 0" />
+    <parent
+      link="Link15_AxisRx_Ankle_Abduction" />
+    <child
+      link="Link16_AxisRx_Toe_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.785"
+      upper="0"
+      effort="0.44"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link20_AxisRy_Hips_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.0191695238748907 -0.00104952349483889 -0.0352473021715193"
+        rpy="0 0 0" />
+      <mass
+        value="0.150034857109825" />
+      <inertia
+        ixx="7.41467834211886E-05"
+        ixy="4.2706691598822E-06"
+        ixz="4.19048433769199E-06"
+        iyy="0.000175384510459711"
+        iyz="-5.87188592248191E-06"
+        izz="0.000122352676232008" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R20_AxisRy_Hips_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.058997 0 -0.036813"
+      rpy="0 1.0472 0" />
+    <parent
+      link="base_link_R0_HipsWaist_Yaw" />
+    <child
+      link="Link20_AxisRy_Hips_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.396"
+      upper="1.396"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link21_AxisRx_Hips_Abduction">
+    <inertial>
+      <origin
+        xyz="0.000421585960770149 -0.0109610923852847 -0.0472922255513191"
+        rpy="0 0 0" />
+      <mass
+        value="0.168809122055464" />
+      <inertia
+        ixx="0.000116232144999569"
+        ixy="-4.42363621138768E-06"
+        ixz="-8.40343454054989E-07"
+        iyy="0.000144789714142267"
+        iyz="-6.52548921967783E-06"
+        izz="0.000196356223785667" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R21_AxisRx_Hips_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0395000000000001"
+      rpy="-1.0471975511966 0 1.5707963267949" />
+    <parent
+      link="Link20_AxisRy_Hips_Flexion" />
+    <child
+      link="Link21_AxisRx_Hips_Abduction" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.436"
+      upper="1.047"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link22_AxisRz_Hips_Rotation">
+    <inertial>
+      <origin
+        xyz="0.0299866277473481 -0.000913351495267486 0.0395841441494933"
+        rpy="0 0 0" />
+      <mass
+        value="0.308888997868642" />
+      <inertia
+        ixx="0.000258350925684757"
+        ixy="1.20182401296459E-05"
+        ixz="-2.22308950807632E-05"
+        iyy="0.000446773838834894"
+        iyz="-2.53944021702335E-05"
+        izz="0.00029936501568538" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R22_AxisRz_Hips_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.000500000000000035 0 -0.0815000000000001"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="Link21_AxisRx_Hips_Abduction" />
+    <child
+      link="Link22_AxisRz_Hips_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.222"
+      upper="1.571"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link23_AxisRy_Knee_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00996165887106263 3.95160131422267E-07 -0.0737094687119398"
+        rpy="0 0 0" />
+      <mass
+        value="0.208100936749786" />
+      <inertia
+        ixx="0.000251269487849732"
+        ixy="8.58282832841128E-11"
+        ixz="-5.37344399964987E-06"
+        iyy="0.000240506181810468"
+        iyz="-1.05041562422904E-09"
+        izz="7.36271062058329E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R23_AxisRy_Knee_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0360000000000001"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="Link22_AxisRz_Hips_Rotation" />
+    <child
+      link="Link23_AxisRy_Knee_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="2.094"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link24_AxisRy_Ankle_Flexion">
+    <inertial>
+      <origin
+        xyz="-4.88788155061361E-05 4.2289045533439E-07 -0.000941696318087049"
+        rpy="0 0 0" />
+      <mass
+        value="0.0198828972990001" />
+      <inertia
+        ixx="5.33136120560905E-06"
+        ixy="5.67486535163625E-11"
+        ixz="-6.76121286353306E-09"
+        iyy="3.84427570506981E-06"
+        iyz="-4.03028590648401E-12"
+        izz="8.29733412364016E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R24_AxisRy_Ankle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.14"
+      rpy="0 0 0" />
+    <parent
+      link="Link23_AxisRy_Knee_Flexion" />
+    <child
+      link="Link24_AxisRy_Ankle_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.96"
+      upper="0.689"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link25_AxisRx_Ankle_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.00749525839677826 -1.00189232951631E-07 -0.04139580697458"
+        rpy="0 0 0" />
+      <mass
+        value="0.162069791661844" />
+      <inertia
+        ixx="8.37583831864788E-05"
+        ixy="9.35835758850048E-11"
+        ixz="5.76979848237024E-06"
+        iyy="0.000111745804626165"
+        iyz="5.47634485578142E-10"
+        izz="0.000127010438487016" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R25_AxisRx_Ankle_Abduction"
+    type="revolute">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link11_AxisRx_Hips_Abduction.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R11_AxisRx_Hips_Abduction"
-  type="revolute">
-  <origin
-    xyz="0 -0.0395 0"
-    rpy="-0.5236 0 0" />
-  <parent
-    link="Link10_AxisRy_Hips_Flexion" />
-  <child
-    link="Link11_AxisRx_Hips_Abduction" />
-  <axis
-    xyz="-1 0 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link12_AxisRz_Hips_Rotation">
-  <inertial>
+    <parent
+      link="Link24_AxisRy_Ankle_Flexion" />
+    <child
+      link="Link25_AxisRx_Ankle_Abduction" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.96"
+      upper="0.96"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link26_AxisRx_Toe_Flexion">
+    <inertial>
+      <origin
+        xyz="0.0181977115240336 0.00126288994199178 -0.00954659053967744"
+        rpy="0 0 0" />
+      <mass
+        value="0.066418983057976" />
+      <inertia
+        ixx="3.95754215658759E-05"
+        ixy="-1.39838716866599E-06"
+        ixz="4.6053784051391E-06"
+        iyy="2.87049416190122E-05"
+        iyz="-1.28510150088011E-07"
+        izz="5.63529154046931E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R26_AxisRx_Toe_Flexion"
+    type="revolute">
     <origin
-      xyz="0.029987 -0.00091501 -0.039584"
+      xyz="0.0550000000000001 0 -0.0425"
       rpy="0 0 0" />
-    <mass
-      value="0.30889" />
-    <inertia
-      ixx="0.00025835"
-      ixy="1.2018E-05"
-      ixz="2.2232E-05"
-      iyy="0.00044678"
-      iyz="2.5395E-05"
-      izz="0.00029937" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link12_AxisRz_Hips_Rotation.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link12_AxisRz_Hips_Rotation.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R12_AxisRz_Hips_Rotation"
-  type="revolute">
-  <origin
-    xyz="-0.0005 0 -0.0815"
-    rpy="0 0 0" />
-  <parent
-    link="Link11_AxisRx_Hips_Abduction" />
-  <child
-    link="Link12_AxisRz_Hips_Rotation" />
-  <axis
-    xyz="0 0 -1" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link13_AxisRy_Knee_Flexion">
-  <inertial>
-    <origin
-      xyz="0.0099617 3.9516E-07 -0.073709"
-      rpy="0 0 0" />
-    <mass
-      value="0.2081" />
-    <inertia
-      ixx="0.00025127"
-      ixy="8.5828E-11"
-      ixz="-5.3734E-06"
-      iyy="0.00024051"
-      iyz="-1.0504E-09"
-      izz="7.3627E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link13_AxisRy_Knee_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link13_AxisRy_Knee_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R13_AxisRy_Knee_Flexion"
-  type="revolute">
-  <origin
-    xyz="0 0 -0.036"
-    rpy="0 0 0" />
-  <parent
-    link="Link12_AxisRz_Hips_Rotation" />
-  <child
-    link="Link13_AxisRy_Knee_Flexion" />
-  <axis
-    xyz="0 -1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link14_AxisRy_Ankle_Flexion">
-  <inertial>
-    <origin
-      xyz="-4.88789163386799E-05 4.22903943489428E-07 -0.000941696330492403"
-      rpy="0 0 0" />
-    <mass
-      value="0.0198828974198513" />
-    <inertia
-      ixx="5.33136120736912E-06"
-      ixy="5.67534226927354E-11"
-      ixz="-6.76121691905726E-09"
-      iyy="3.84427574199253E-06"
-      iyz="-4.02962768732565E-12"
-      izz="8.2973341598147E-06" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R14_AxisRy_Ankle_Flexion"
-  type="revolute">
-  <origin
-    xyz="0 0 -0.14"
-    rpy="0 0 0" />
-  <parent
-    link="Link13_AxisRy_Knee_Flexion" />
-  <child
-    link="Link14_AxisRy_Ankle_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link15_AxisRx_Ankle_Abduction">
-  <inertial>
-    <origin
-      xyz="-0.0074953 -1.0019E-07 -0.041396"
-      rpy="0 0 0" />
-    <mass
-      value="0.16207" />
-    <inertia
-      ixx="8.3758E-05"
-      ixy="9.3594E-11"
-      ixz="5.7698E-06"
-      iyy="0.00011175"
-      iyz="5.4765E-10"
-      izz="0.00012701" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R15_AxisRx_Ankle_Abduction"
-  type="revolute">
-  <origin
-    xyz="0 0 0"
-    rpy="0 0 0" />
-  <parent
-    link="Link14_AxisRy_Ankle_Flexion" />
-  <child
-    link="Link15_AxisRx_Ankle_Abduction" />
-  <axis
-    xyz="1 0 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link16_AxisRx_Toe_Flexion">
-  <inertial>
-    <origin
-      xyz="0.018198 0.0012629 -0.0095466"
-      rpy="0 0 0" />
-    <mass
-      value="0.066419" />
-    <inertia
-      ixx="3.9575E-05"
-      ixy="-1.3984E-06"
-      ixz="4.6054E-06"
-      iyy="2.8705E-05"
-      iyz="-1.2851E-07"
-      izz="5.6353E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link16_AxisRx_Toe_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link16_AxisRx_Toe_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R16_AxisRx_Toe_Flexion"
-  type="revolute">
-  <origin
-    xyz="0.055 0 -0.0425"
-    rpy="0 0 0" />
-  <parent
-    link="Link15_AxisRx_Ankle_Abduction" />
-  <child
-    link="Link16_AxisRx_Toe_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link20_AxisRy_Hips_Flexion">
-  <inertial>
-    <origin
-      xyz="-0.0010495 0.035247 0.01917"
-      rpy="0 0 0" />
-    <mass
-      value="0.15003" />
-    <inertia
-      ixx="0.00017538"
-      ixy="5.8719E-06"
-      ixz="-4.2707E-06"
-      iyy="0.00012235"
-      iyz="4.1905E-06"
-      izz="7.4147E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link20_AxisRy_Hips_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link20_AxisRy_Hips_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R20_AxisRy_Hips_Flexion"
-  type="revolute">
-  <origin
-    xyz="0.058997 -0.036813 0"
-    rpy="1.0472 -1.5708 0" />
-  <parent
-    link="base_link_R0_HipsWaist_Yaw" />
-  <child
-    link="Link20_AxisRy_Hips_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link21_AxisRx_Hips_Abduction">
-  <inertial>
-    <origin
-      xyz="0.00042068 0.010962 -0.047292"
-      rpy="0 0 0" />
-    <mass
-      value="0.16881" />
-    <inertia
-      ixx="0.00011623"
-      ixy="4.4265E-06"
-      ixz="-8.4116E-07"
-      iyy="0.00014479"
-      iyz="6.5257E-06"
-      izz="0.00019636" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link21_AxisRx_Hips_Abduction.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link21_AxisRx_Hips_Abduction.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R21_AxisRx_Hips_Abduction"
-  type="revolute">
-  <origin
-    xyz="0 0.0395 0"
-    rpy="0.5236 0 0" />
-  <parent
-    link="Link20_AxisRy_Hips_Flexion" />
-  <child
-    link="Link21_AxisRx_Hips_Abduction" />
-  <axis
-    xyz="-1 0 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link22_AxisRz_Hips_Rotation">
-  <inertial>
-    <origin
-      xyz="0.029987 0.00091335 -0.039584"
-      rpy="0 0 0" />
-    <mass
-      value="0.30889" />
-    <inertia
-      ixx="0.00025835"
-      ixy="-1.2018E-05"
-      ixz="2.2231E-05"
-      iyy="0.00044677"
-      iyz="-2.5394E-05"
-      izz="0.00029937" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link22_AxisRz_Hips_Rotation.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link22_AxisRz_Hips_Rotation.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R22_AxisRz_Hips_Rotation"
-  type="revolute">
-  <origin
-    xyz="-0.0005 0 -0.0815"
-    rpy="0 0 0" />
-  <parent
-    link="Link21_AxisRx_Hips_Abduction" />
-  <child
-    link="Link22_AxisRz_Hips_Rotation" />
-  <axis
-    xyz="0 0 -1" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link23_AxisRy_Knee_Flexion">
-  <inertial>
-    <origin
-      xyz="0.0099617 3.9516E-07 -0.073709"
-      rpy="0 0 0" />
-    <mass
-      value="0.2081" />
-    <inertia
-      ixx="0.00025127"
-      ixy="8.5828E-11"
-      ixz="-5.3734E-06"
-      iyy="0.00024051"
-      iyz="-1.0504E-09"
-      izz="7.3627E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link23_AxisRy_Knee_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link23_AxisRy_Knee_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R23_AxisRy_Knee_Flexion"
-  type="revolute">
-  <origin
-    xyz="0 0 -0.036"
-    rpy="0 0 0" />
-  <parent
-    link="Link22_AxisRz_Hips_Rotation" />
-  <child
-    link="Link23_AxisRy_Knee_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link24_AxisRy_Ankle_Flexion">
-  <inertial>
-    <origin
-      xyz="-4.8879E-05 4.229E-07 -0.0009417"
-      rpy="0 0 0" />
-    <mass
-      value="0.019883" />
-    <inertia
-      ixx="5.3314E-06"
-      ixy="5.6753E-11"
-      ixz="-6.7612E-09"
-      iyy="3.8443E-06"
-      iyz="-4.0296E-12"
-      izz="8.2973E-06" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R24_AxisRy_Ankle_Flexion"
-  type="revolute">
-  <origin
-    xyz="0 0 -0.14"
-    rpy="0 0 0" />
-  <parent
-    link="Link23_AxisRy_Knee_Flexion" />
-  <child
-    link="Link24_AxisRy_Ankle_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link25_AxisRx_Ankle_Abduction">
-  <inertial>
-    <origin
-      xyz="-0.0074953 -1.0019E-07 -0.041396"
-      rpy="0 0 0" />
-    <mass
-      value="0.16207" />
-    <inertia
-      ixx="8.3758E-05"
-      ixy="9.3574E-11"
-      ixz="5.7698E-06"
-      iyy="0.00011175"
-      iyz="5.4765E-10"
-      izz="0.00012701" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R25_AxisRx_Ankle_Abduction"
-  type="revolute">
-  <origin
-    xyz="0 0 0"
-    rpy="0 0 0" />
-  <parent
-    link="Link24_AxisRy_Ankle_Flexion" />
-  <child
-    link="Link25_AxisRx_Ankle_Abduction" />
-  <axis
-    xyz="1 0 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
-<link
-  name="Link26_AxisRx_Toe_Flexion">
-  <inertial>
-    <origin
-      xyz="0.018198 0.0012629 -0.0095466"
-      rpy="0 0 0" />
-    <mass
-      value="0.066419" />
-    <inertia
-      ixx="3.9575E-05"
-      ixy="-1.3984E-06"
-      ixz="4.6054E-06"
-      iyy="2.8705E-05"
-      iyz="-1.2851E-07"
-      izz="5.6353E-05" />
-  </inertial>
-  <visual>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link26_AxisRx_Toe_Flexion.STL" />
-    </geometry>
-    <material
-      name="">
-      <color
-        rgba="0.75294 0.75294 0.75294 1" />
-    </material>
-  </visual>
-  <collision>
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <geometry>
-      <mesh
-        filename="package://robot_description/meshes/Link26_AxisRx_Toe_Flexion.STL" />
-    </geometry>
-  </collision>
-</link>
-<joint
-  name="R26_AxisRx_Toe_Flexion"
-  type="revolute">
-  <origin
-    xyz="0.055 0 -0.0425"
-    rpy="0 0 0" />
-  <parent
-    link="Link25_AxisRx_Ankle_Abduction" />
-  <child
-    link="Link26_AxisRx_Toe_Flexion" />
-  <axis
-    xyz="0 1 0" />
-  <limit
-    lower="0"
-    upper="0"
-    effort="0"
-    velocity="0" />
-</joint>
+    <parent
+      link="Link25_AxisRx_Ankle_Abduction" />
+    <child
+      link="Link26_AxisRx_Toe_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.785"
+      upper="0.96"
+      effort="0.44"
+      velocity="5.05" />
+  </joint>
 
-    <ros2_control name="GazeboSystem" type="system">
+<ros2_control name="GazeboSystem" type="system">
       <hardware>
         <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         <param name="use_sim_time" type="bool">true</param>
@@ -1054,7 +1753,7 @@
     </state_interface>
     <state_interface name="velocity"/>
   </joint>
-  <joint name="R1_AxisRx_Waist_Roll">
+  <joint name="R1_AxisRx_Abs_Roll">
     <command_interface name="position"/>
     <state_interface name="position">
       <param name="initial_value">0.0</param>
@@ -1166,7 +1865,92 @@
     </state_interface>
     <state_interface name="velocity"/>
   </joint>
-    </ros2_control>
+    
+  <joint name="R30_AxisRy_Shoulder_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R31_AxisRz_Shoulder_Rotation">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R32_AxisRx_Shoulder_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R33_AxisRy_Elbow_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R34_AxisRz_Wrist_Rotation">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R35_AxisRx_Wrist_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R40_AxisRy_Shoulder_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R41_AxisRz_Shoulder_Rotation">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R42_AxisRx_Shoulder_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R43_AxisRy_Elbow_Flexion">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R44_AxisRz_Wrist_Rotation">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="R45_AxisRx_Wrist_Abduction">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param>
+    </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+</ros2_control>
 
     <gazebo>
       <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
@@ -1184,7 +1968,7 @@
       <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
         <update_rate>50</update_rate>
       <joint_name>R0_AxisRz_Waist_Yaw</joint_name>
-      <joint_name>R1_AxisRx_Waist_Roll</joint_name>
+      <joint_name>R1_AxisRx_Abs_Roll</joint_name>
       <joint_name>R2_AxisRy_Abs_Pitch</joint_name>
       <joint_name>R10_AxisRy_Hips_Flexion</joint_name>
       <joint_name>R11_AxisRx_Hips_Abduction</joint_name>
@@ -1200,7 +1984,19 @@
       <joint_name>R24_AxisRy_Ankle_Flexion</joint_name>
       <joint_name>R25_AxisRx_Ankle_Abduction</joint_name>
       <joint_name>R26_AxisRx_Toe_Flexion</joint_name>
-      </plugin>
+      <joint_name>R30_AxisRy_Shoulder_Flexion</joint_name>
+      <joint_name>R31_AxisRz_Shoulder_Rotation</joint_name>
+      <joint_name>R32_AxisRx_Shoulder_Abduction</joint_name>
+      <joint_name>R33_AxisRy_Elbow_Flexion</joint_name>
+      <joint_name>R34_AxisRz_Wrist_Rotation</joint_name>
+      <joint_name>R35_AxisRx_Wrist_Abduction</joint_name>
+      <joint_name>R40_AxisRy_Shoulder_Flexion</joint_name>
+      <joint_name>R41_AxisRz_Shoulder_Rotation</joint_name>
+      <joint_name>R42_AxisRx_Shoulder_Abduction</joint_name>
+      <joint_name>R43_AxisRy_Elbow_Flexion</joint_name>
+      <joint_name>R44_AxisRz_Wrist_Rotation</joint_name>
+      <joint_name>R45_AxisRx_Wrist_Abduction</joint_name>
+</plugin>
     </gazebo>
 
 <!-- First Camera -->
@@ -1211,12 +2007,6 @@
       </geometry>
       <origin rpy="0 1.5708 0"/> <!-- Rotate 90 degrees around the Y-axis (1.5708 radians = 90 degrees) -->
     </visual> 
-    <collision> 
-      <geometry> 
-        <mesh filename="file://$(find robot_description)/meshes/3dCamera.DAE"/> 
-      </geometry>
-      <origin rpy="0 1.5708 0"/> 
-    </collision> 
   </link>
 
   <gazebo reference="camera_link1">
@@ -1275,12 +2065,6 @@
       </geometry>
       <origin rpy="0 1.5708 0"/> <!-- Rotate 90 degrees around the Y-axis (1.5708 radians = 90 degrees) -->
     </visual> 
-    <collision> 
-      <geometry> 
-        <mesh filename="file://$(find robot_description)/meshes/3dCamera.DAE"/> 
-      </geometry>
-      <origin rpy="0 1.5708 0"/> 
-    </collision> 
   </link>
 
   <gazebo reference="camera_link2">
@@ -1330,5 +2114,4 @@
       </plugin>
     </sensor>
   </gazebo>
-
 </robot>

@@ -15,10 +15,10 @@
   </state_interface>
   <state_interface name="velocity"/>
 </joint>
-<joint name="R1_AxisRx_Waist_Roll">
+<joint name="R1_AxisRx_Abs_Roll">
   <command_interface name="position"/>
   <state_interface name="position">
-    <param name="initial_value">${initial_positions['R1_AxisRx_Waist_Roll']}</param>
+    <param name="initial_value">${initial_positions['R1_AxisRx_Abs_Roll']}</param>
   </state_interface>
   <state_interface name="velocity"/>
 </joint>
@@ -26,6 +26,90 @@
   <command_interface name="position"/>
   <state_interface name="position">
     <param name="initial_value">${initial_positions['R2_AxisRy_Abs_Pitch']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R30_AxisRy_Shoulder_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R30_AxisRy_Shoulder_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R31_AxisRz_Shoulder_Rotation">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R31_AxisRz_Shoulder_Rotation']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R32_AxisRx_Shoulder_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R32_AxisRx_Shoulder_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R33_AxisRy_Elbow_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R33_AxisRy_Elbow_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R34_AxisRz_Wrist_Rotation">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R34_AxisRz_Wrist_Rotation']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R35_AxisRx_Wrist_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R35_AxisRx_Wrist_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R40_AxisRy_Shoulder_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R40_AxisRy_Shoulder_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R41_AxisRz_Shoulder_Rotation">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R41_AxisRz_Shoulder_Rotation']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R42_AxisRx_Shoulder_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R42_AxisRx_Shoulder_Abduction']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R43_AxisRy_Elbow_Flexion">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R43_AxisRy_Elbow_Flexion']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R44_AxisRz_Wrist_Rotation">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R44_AxisRz_Wrist_Rotation']}</param>
+  </state_interface>
+  <state_interface name="velocity"/>
+</joint>
+<joint name="R45_AxisRx_Wrist_Abduction">
+  <command_interface name="position"/>
+  <state_interface name="position">
+    <param name="initial_value">${initial_positions['R45_AxisRx_Wrist_Abduction']}</param>
   </state_interface>
   <state_interface name="velocity"/>
 </joint>

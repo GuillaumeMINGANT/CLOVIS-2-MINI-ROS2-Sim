@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
       </geometry>
     </collision>
   </link>
@@ -124,7 +124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
       </geometry>
       <material
         name="">
@@ -138,7 +138,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
       </geometry>
     </collision>
   </link>
@@ -182,7 +182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
       </geometry>
       <material
         name="">
@@ -196,7 +196,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
       </geometry>
     </collision>
   </link>
@@ -240,7 +240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -254,7 +254,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -298,7 +298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
       </geometry>
       <material
         name="">
@@ -312,7 +312,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
       </geometry>
     </collision>
   </link>
@@ -356,7 +356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -370,7 +370,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -414,7 +414,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -428,7 +428,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -472,7 +472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
       </geometry>
       <material
         name="">
@@ -486,7 +486,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
       </geometry>
     </collision>
   </link>
@@ -530,7 +530,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -544,7 +544,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -588,7 +588,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -602,7 +602,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -646,7 +646,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
       </geometry>
       <material
         name="">
@@ -660,7 +660,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
       </geometry>
     </collision>
   </link>
@@ -704,7 +704,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -718,7 +718,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -762,7 +762,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -776,7 +776,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -820,7 +820,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
       </geometry>
       <material
         name="">
@@ -834,7 +834,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
       </geometry>
     </collision>
   </link>
@@ -878,7 +878,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -892,7 +892,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -936,7 +936,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -950,7 +950,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -994,7 +994,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -1008,7 +1008,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -1052,7 +1052,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
       </geometry>
       <material
         name="">
@@ -1066,7 +1066,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
       </geometry>
     </collision>
   </link>
@@ -1110,7 +1110,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1124,7 +1124,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -1168,7 +1168,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1182,7 +1182,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -1226,7 +1226,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -1240,7 +1240,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -1284,7 +1284,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1298,7 +1298,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -1342,7 +1342,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1356,7 +1356,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -1400,7 +1400,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -1414,7 +1414,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -1458,7 +1458,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
       </geometry>
       <material
         name="">
@@ -1472,7 +1472,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
       </geometry>
     </collision>
   </link>
@@ -1516,7 +1516,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1530,7 +1530,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -1574,7 +1574,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1588,7 +1588,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
       </geometry>
     </collision>
   </link>
@@ -1632,7 +1632,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
       </geometry>
       <material
         name="">
@@ -1646,7 +1646,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
       </geometry>
     </collision>
   </link>
@@ -1690,7 +1690,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
       </geometry>
       <material
         name="">
@@ -1704,7 +1704,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://CLOVIS25_URDF_Assembly_V1 With Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+          filename="file:///home/gmingant/CLOVIS-2-MINI-ROS2-Sim/src/CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
       </geometry>
     </collision>
   </link>
