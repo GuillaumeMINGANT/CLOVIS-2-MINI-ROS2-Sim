@@ -3,6 +3,7 @@
 <p align="center">
   <img src="images/URDF_WithoutHand.png" alt="Robot Urdf view in https://viewer.robotsfan.com/" />
 </p>
+Easy check : go on https://viewer.robotsfan.com/ and drag and drop an URDF folder contain in src (thanks https://github.com/fan-ziqi/robot_viewer)
 
 ## Table of Contents
 
