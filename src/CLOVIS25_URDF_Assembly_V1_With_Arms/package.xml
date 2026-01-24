@@ -1,10 +1,10 @@
 <package format="2">
-  <name>CLOVIS25_URDF_Assembly_V1 With Arms</name>
+  <name>CLOVIS25_URDF_Assembly_V1_With_Arms</name>
   <version>1.0.0</version>
   <description>
-    <p>URDF Description package for CLOVIS25_URDF_Assembly_V1 With Arms</p>
+    <p>URDF Description package for CLOVIS25_URDF_Assembly_V1_With_Arms</p>
     <p>This package contains configuration data, 3D models and launch files
-for CLOVIS25_URDF_Assembly_V1 With Arms robot</p>
+for CLOVIS25_URDF_Assembly_V1_With_Arms robot</p>
   </description>
   <author>TODO</author>
   <maintainer email="TODO@email.com" />

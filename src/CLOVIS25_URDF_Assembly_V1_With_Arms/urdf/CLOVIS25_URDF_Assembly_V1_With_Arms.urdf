@@ -1,0 +1,3232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="CLOVIS25_URDF_Assembly_V1_With_Arms">
+  <link
+    name="base_link_R0_HipsWaist_Yaw">
+    <inertial>
+      <origin
+        xyz="-5.06849795024474E-07 0.00646210878121356 -0.00735619477677179"
+        rpy="0 0 0" />
+      <mass
+        value="0.387437520077023" />
+      <inertia
+        ixx="0.000602004181073715"
+        ixy="-3.93523719188462E-09"
+        ixz="8.4131146427588E-09"
+        iyy="0.00055466319918311"
+        iyz="0.000144231027663687"
+        izz="0.00059139342226567" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/base_link_R0_HipsWaist_Yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="LinkR0_AxisRz_Waist_Yaw">
+    <inertial>
+      <origin
+        xyz="1.46812364558688E-08 0.00792255367963899 0.0328105533698633"
+        rpy="0 0 0" />
+      <mass
+        value="0.0743770113903966" />
+      <inertia
+        ixx="0.000109844902331301"
+        ixy="6.43572844078283E-11"
+        ixz="1.80691197731371E-11"
+        iyy="5.27744826789087E-05"
+        iyz="8.66811215600059E-06"
+        izz="6.86185978836166E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/LinkR0_AxisRz_Waist_Yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R0_AxisRz_Waist_Yaw"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link_R0_HipsWaist_Yaw" />
+    <child
+      link="LinkR0_AxisRz_Waist_Yaw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.611"
+      upper="0.611"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link1_AxisRx_Abs_Roll">
+    <inertial>
+      <origin
+        xyz="-0.000419037666758958 -8.6704448896009E-06 0.00334728947605598"
+        rpy="0 0 0" />
+      <mass
+        value="0.0285702910432507" />
+      <inertia
+        ixx="7.08725803682832E-06"
+        ixy="-2.4583009930987E-09"
+        ixz="-4.77409616773001E-08"
+        iyy="2.32521875946385E-05"
+        iyz="-1.59332092975714E-09"
+        izz="2.62164733137172E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.698039215686274 0.698039215686274 0.698039215686274 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link1_AxisRx_Abs_Roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1_AxisRx_Abs_Roll"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0830000000000002"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="LinkR0_AxisRz_Waist_Yaw" />
+    <child
+      link="Link1_AxisRx_Abs_Roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.524"
+      upper="0.524"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link2_AxisRy_Abs_Pitch">
+    <inertial>
+      <origin
+        xyz="0.0116502060780708 0.000444779964340122 0.0990057210700123"
+        rpy="0 0 0" />
+      <mass
+        value="1.76579053635958" />
+      <inertia
+        ixx="0.00272833882633648"
+        ixy="-2.20597482402931E-07"
+        ixz="8.18805229038268E-05"
+        iyy="0.00286417553448298"
+        iyz="4.10931314151063E-07"
+        izz="0.00262213593870311" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link2_AxisRy_Abs_Pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2_AxisRy_Abs_Pitch"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link1_AxisRx_Abs_Roll" />
+    <child
+      link="Link2_AxisRy_Abs_Pitch" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.689"
+      upper="0.785"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link30_AxisRy_Shoulder_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00121122068029511 -0.00325038069237409 0.01205449037587"
+        rpy="0 0 0" />
+      <mass
+        value="0.0372580129564287" />
+      <inertia
+        ixx="1.59289940590296E-05"
+        ixy="-1.20792454995667E-06"
+        ixz="-4.7940507230333E-07"
+        iyy="1.6393396994726E-05"
+        iyz="-8.0278671679873E-07"
+        izz="2.03149646905184E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link30_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R30_AxisRy_Shoulder_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.0289259399205682 -0.101367916470833 0.130853241275273"
+      rpy="-0.252680255142087 1.30019891167267 -1.5707963267949" />
+    <parent
+      link="Link2_AxisRy_Abs_Pitch" />
+    <child
+      link="Link30_AxisRy_Shoulder_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link31_AxisRz_Shoulder_Rotation">
+    <inertial>
+      <origin
+        xyz="0.0310376632963733 0.0149615998455135 -0.00284843103933208"
+        rpy="0 0 0" />
+      <mass
+        value="0.0306387760752888" />
+      <inertia
+        ixx="1.91180450287481E-05"
+        ixy="-2.81655737035407E-07"
+        ixz="8.43328137709067E-07"
+        iyy="2.64927352089561E-05"
+        iyz="-1.49756484162896E-07"
+        izz="1.4496990488765E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link31_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R31_AxisRz_Shoulder_Rotation"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0185"
+      rpy="1.5708 -1.3181 -1.5708" />
+    <parent
+      link="Link30_AxisRy_Shoulder_Flexion" />
+    <child
+      link="Link31_AxisRz_Shoulder_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link32_AxisRx_Shoulder_Abduction">
+    <inertial>
+      <origin
+        xyz="0.0104532597532089 0.062163437123838 -0.0367102436834052"
+        rpy="0 0 0" />
+      <mass
+        value="0.102687647828558" />
+      <inertia
+        ixx="0.000190390945399026"
+        ixy="-3.56957903134248E-06"
+        ixz="8.37982643800101E-06"
+        iyy="8.95092176175717E-05"
+        iyz="1.36359033600638E-05"
+        izz="0.000128468014081588" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link32_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R32_AxisRx_Shoulder_Abduction"
+    type="revolute">
+    <origin
+      xyz="0.04 0.035 -2.7028E-05"
+      rpy="-1.5708 0.2706 0" />
+    <parent
+      link="Link31_AxisRz_Shoulder_Rotation" />
+    <child
+      link="Link32_AxisRx_Shoulder_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link33_AxisRy_Elbow_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00807277244123876 -0.0218914344069931 2.79389832824606E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.062525137315617" />
+      <inertia
+        ixx="2.66478352150102E-05"
+        ixy="6.31835903644819E-07"
+        ixz="-3.71122215374951E-11"
+        iyy="2.90857173843087E-05"
+        iyz="-2.29744106491836E-10"
+        izz="2.16871210520696E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link33_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R33_AxisRy_Elbow_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.0113302428061854 0.129505311080098 -0.035"
+      rpy="1.5707963267949 0 -1.65806278939461" />
+    <parent
+      link="Link32_AxisRx_Shoulder_Abduction" />
+    <child
+      link="Link33_AxisRy_Elbow_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link34_AxisRz_Wrist_Rotation">
+    <inertial>
+      <origin
+        xyz="0.000526763744020858 0.000899599310191115 -0.0255225516370474"
+        rpy="0 0 0" />
+      <mass
+        value="0.095705310536798" />
+      <inertia
+        ixx="5.31202839633432E-05"
+        ixy="-5.32218440986211E-08"
+        ixz="1.77417951512435E-07"
+        iyy="5.30307409761996E-05"
+        iyz="1.14726761693416E-06"
+        izz="3.79616505903231E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link34_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R34_AxisRz_Wrist_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.0399999999999999 -0.019 0"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="Link33_AxisRy_Elbow_Flexion" />
+    <child
+      link="Link34_AxisRz_Wrist_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link35_AxisRx_Wrist_Abduction">
+    <inertial>
+      <origin
+        xyz="0.00813435863366127 -4.05206365898525E-07 5.46147126134766E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0129110778126474" />
+      <inertia
+        ixx="5.34580369587511E-06"
+        ixy="-1.03772626655587E-10"
+        ixz="6.3430733622055E-11"
+        iyy="1.41876387165846E-06"
+        iyz="-1.77315332019497E-11"
+        izz="5.32098561653815E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link35_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R35_AxisRx_Wrist_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.093138"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="Link34_AxisRz_Wrist_Rotation" />
+    <child
+      link="Link35_AxisRx_Wrist_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link36_AxisRy_Wrist_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00278270226153091 0.0506978853954701 -0.000512408108588609"
+        rpy="0 0 0" />
+      <mass
+        value="0.0948668355723175" />
+      <inertia
+        ixx="6.39849613421153E-05"
+        ixy="5.73647920860369E-06"
+        ixz="3.49414578842124E-06"
+        iyy="2.95679718312657E-05"
+        iyz="-7.83640400278746E-06"
+        izz="4.67669259633923E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link36_AxisRy_Wrist_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link36_AxisRy_Wrist_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R36_AxisRy_Wrist_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 -1.4835 0" />
+    <parent
+      link="Link35_AxisRx_Wrist_Abduction" />
+    <child
+      link="Link36_AxisRy_Wrist_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link51_AxisRz_ThumbKnucle_Rotation">
+    <inertial>
+      <origin
+        xyz="-4.91409359870687E-08 -0.000121891601792302 0.00201210065266348"
+        rpy="0 0 0" />
+      <mass
+        value="0.00115968038152584" />
+      <inertia
+        ixx="4.03439585122942E-08"
+        ixy="-2.3926872441935E-13"
+        ixz="-3.87054840494303E-14"
+        iyy="4.18267857957113E-08"
+        iyz="-4.02150632626583E-10"
+        izz="1.66744809622269E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link51_AxisRz_ThumbKnucle_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link51_AxisRz_ThumbKnucle_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R51_AxisRz_ThumbKnucle_Rotation"
+    type="revolute">
+    <origin
+      xyz="0.020899 0.0382 -0.021786"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="Link36_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link51_AxisRz_ThumbKnucle_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link52_AxisRy_ThumbKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00616866200396485 -0.0146131442688382 -8.87240666769262E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00310333576369739" />
+      <inertia
+        ixx="2.79345952527214E-07"
+        ixy="5.45699827270721E-08"
+        ixz="1.93583934066063E-12"
+        iyy="1.60619700743413E-07"
+        iyz="-1.82698794798632E-12"
+        izz="2.38435467591494E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link52_AxisRy_ThumbKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link52_AxisRy_ThumbKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R52_AxisRy_ThumbKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.028971 -0.0077892"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="Link51_AxisRz_ThumbKnucle_Rotation" />
+    <child
+      link="Link52_AxisRy_ThumbKnucle_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link53_AxisRy_Thumb_Flexion">
+    <inertial>
+      <origin
+        xyz="7.16902495655203E-05 0.00984633190079492 -0.000109122506525783"
+        rpy="0 0 0" />
+      <mass
+        value="0.00389502563585412" />
+      <inertia
+        ixx="3.31740758410829E-07"
+        ixy="8.52234616085918E-08"
+        ixz="-3.03665120916498E-10"
+        iyy="1.48960518802376E-07"
+        iyz="8.3187693987597E-10"
+        izz="3.11286681941714E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link53_AxisRy_Thumb_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link53_AxisRy_Thumb_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R53_AxisRy_Thumb_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link52_AxisRy_ThumbKnucle_Flexion" />
+    <child
+      link="Link53_AxisRy_Thumb_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link54_AxisRx_IndexKnucle_Abduction">
+    <inertial>
+      <origin
+        xyz="0.000121891601791602 4.914092399666E-08 -0.00201210065265253"
+        rpy="0 0 0" />
+      <mass
+        value="0.00115968038152584" />
+      <inertia
+        ixx="4.18267857957199E-08"
+        ixy="-2.39268722725486E-13"
+        ixz="-4.02150632623775E-10"
+        iyy="4.03439585123012E-08"
+        iyz="-3.87054859986977E-14"
+        izz="1.66744809622338E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link54_AxisRx_IndexKnucle_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link54_AxisRx_IndexKnucle_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R54_AxisRx_IndexKnucle_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0.10071 -0.03"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Link36_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link54_AxisRx_IndexKnucle_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link55_AxisRy_IndexKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00211406335375969 0.0145062489951216 -4.40290241765506E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00305079596232099" />
+      <inertia
+        ixx="2.87529730754127E-07"
+        ixy="-1.55515958091936E-08"
+        ixz="-1.24036019454895E-13"
+        iyy="1.38377543503246E-07"
+        iyz="-3.76599756784399E-13"
+        izz="2.29166032829361E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link55_AxisRy_IndexKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link55_AxisRy_IndexKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R55_AxisRy_IndexKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="Link54_AxisRx_IndexKnucle_Abduction" />
+    <child
+      link="Link55_AxisRy_IndexKnucle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link56_AxisRy_IndexMiddle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00240152083458003 0.00654385041932792 -7.7800487937256E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00237461021631888" />
+      <inertia
+        ixx="1.93784109250359E-07"
+        ixy="1.60821542165143E-08"
+        ixz="7.9586171499932E-11"
+        iyy="9.31756219047224E-08"
+        iyz="3.55124367944556E-10"
+        izz="1.51786468172035E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link56_AxisRy_IndexMiddle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link56_AxisRy_IndexMiddle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R56_AxisRy_IndexMiddle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.03 0"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="Link55_AxisRy_IndexKnucle_Flexion" />
+    <child
+      link="Link56_AxisRy_IndexMiddle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link57_AxisRy_IndexTip_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.0055511693115998 0.00681823871642107 -2.21893248197186E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00253828371370102" />
+      <inertia
+        ixx="1.28437698390913E-07"
+        ixy="2.58021659424518E-08"
+        ixz="7.27690086494829E-12"
+        iyy="8.57012975056649E-08"
+        iyz="-6.3136370901294E-11"
+        izz="1.10632726364156E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link57_AxisRy_IndexTip_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link57_AxisRy_IndexTip_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R57_AxisRy_IndexTip_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.00093853 0.018977 -0.0001"
+      rpy="0 0 0" />
+    <parent
+      link="Link56_AxisRy_IndexMiddle_Flexion" />
+    <child
+      link="Link57_AxisRy_IndexTip_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link58_AxisRy_MiddleFingerKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00211406335375613 0.0145062489951233 -4.4029032260362E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00305079596232099" />
+      <inertia
+        ixx="2.87529730754109E-07"
+        ixy="-1.55515958091894E-08"
+        ixz="-1.24036018072133E-13"
+        iyy="1.38377543503253E-07"
+        iyz="-3.7659975848515E-13"
+        izz="2.29166032829349E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link58_AxisRy_MiddleFingerKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link58_AxisRy_MiddleFingerKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R58_AxisRy_MiddleFingerKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.0958 -0.0121"
+      rpy="0 0 0" />
+    <parent
+      link="Link36_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link58_AxisRy_MiddleFingerKnucle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link59_AxisRy_MiddleFingerMiddle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00240152083459483 0.00654385041930911 -7.78004879408538E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00237461021631887" />
+      <inertia
+        ixx="1.93784109250358E-07"
+        ixy="1.6082154216516E-08"
+        ixz="7.95861715003474E-11"
+        iyy="9.31756219047186E-08"
+        iyz="3.55124367944202E-10"
+        izz="1.5178646817203E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link59_AxisRy_MiddleFingerMiddle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link59_AxisRy_MiddleFingerMiddle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R59_AxisRy_MiddleFingerMiddle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.03 -0.0001"
+      rpy="-3.1416 0 -3.1416" />
+    <parent
+      link="Link58_AxisRy_MiddleFingerKnucle_Flexion" />
+    <child
+      link="Link59_AxisRy_MiddleFingerMiddle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link71_AxisRy_MiddleFingerTip_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00555116931158445 0.00681823871640319 -2.21893248306126E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00253828371370102" />
+      <inertia
+        ixx="1.28437698390917E-07"
+        ixy="2.58021659424495E-08"
+        ixz="7.2769008648212E-12"
+        iyy="8.57012975056694E-08"
+        iyz="-6.3136370901502E-11"
+        izz="1.10632726364166E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link71_AxisRy_MiddleFingerTip_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link71_AxisRy_MiddleFingerTip_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R71_AxisRy_MiddleFingerTip_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.00093853 0.018977 -0.0001"
+      rpy="0 0 0" />
+    <parent
+      link="Link59_AxisRy_MiddleFingerMiddle_Flexion" />
+    <child
+      link="Link71_AxisRy_MiddleFingerTip_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link72_AxisRy_PinkyKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00211406335375966 0.0145062489951216 -0.00900000440290133"
+        rpy="0 0 0" />
+      <mass
+        value="0.00610159192464205" />
+      <inertia
+        ixx="5.75059461508261E-07"
+        ixy="-3.110319161842E-08"
+        ixz="-2.48072038654902E-13"
+        iyy="2.76755087006631E-07"
+        iyz="-7.53199512965244E-13"
+        izz="4.58332065658863E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link72_AxisRy_PinkyKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link72_AxisRy_PinkyKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R72_AxisRy_PinkyKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.0958 0.0239"
+      rpy="0 0 0" />
+    <parent
+      link="Link36_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link72_AxisRy_PinkyKnucle_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link73_AxisRy_PinkyMiddle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00240152083459336 0.0065438504193108 0.00892219951206063"
+        rpy="0 0 0" />
+      <mass
+        value="0.00474922043263773" />
+      <inertia
+        ixx="3.87568218500719E-07"
+        ixy="3.2164308433028E-08"
+        ixz="1.59172343000888E-10"
+        iyy="1.86351243809436E-07"
+        iyz="7.10248735888108E-10"
+        izz="3.03572936344064E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link73_AxisRy_PinkyMiddle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link73_AxisRy_PinkyMiddle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R73_AxisRy_PinkyMiddle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.03 -0.0001"
+      rpy="3.1416 0 -3.1416" />
+    <parent
+      link="Link72_AxisRy_PinkyKnucle_Flexion" />
+    <child
+      link="Link73_AxisRy_PinkyMiddle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link74_AxisRy_PinkyTip_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00555116931158375 0.00681823871640161 0.00899778106751594"
+        rpy="0 0 0" />
+      <mass
+        value="0.00507656742740204" />
+      <inertia
+        ixx="2.56875396781832E-07"
+        ixy="5.16043318849003E-08"
+        ixz="1.45538017299102E-11"
+        iyy="1.71402595011334E-07"
+        iyz="-1.262727418032E-10"
+        izz="2.21265452728324E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link74_AxisRy_PinkyTip_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link74_AxisRy_PinkyTip_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R74_AxisRy_PinkyTip_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.00093853 0.018977 -0.0001"
+      rpy="0 0 0" />
+    <parent
+      link="Link73_AxisRy_PinkyMiddle_Flexion" />
+    <child
+      link="Link74_AxisRy_PinkyTip_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link40_AxisRy_Shoulder_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00121123558723257 -0.00325052552894097 -0.0120546201896226"
+        rpy="0 0 0" />
+      <mass
+        value="0.0372585040308182" />
+      <inertia
+        ixx="1.59292439561581E-05"
+        ixy="-1.20796833909011E-06"
+        ixz="4.79452740206935E-07"
+        iyy="1.63936933589084E-05"
+        iyz="8.0280097484525E-07"
+        izz="2.03152999256755E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link40_AxisRy_Shoulder_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R40_AxisRy_Shoulder_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.028926 0.10137 0.13085"
+      rpy="-2.8889 1.3002 1.5708" />
+    <parent
+      link="Link2_AxisRy_Abs_Pitch" />
+    <child
+      link="Link40_AxisRy_Shoulder_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link41_AxisRz_Shoulder_Rotation">
+    <inertial>
+      <origin
+        xyz="-0.031037590317066 0.0149616403812064 -0.00284732124355624"
+        rpy="0 0 0" />
+      <mass
+        value="0.0306386900120499" />
+      <inertia
+        ixx="1.91180620203453E-05"
+        ixy="2.81663109524512E-07"
+        ixz="-8.43194947317033E-07"
+        iyy="2.64926204617935E-05"
+        iyz="-1.49808930781167E-07"
+        izz="1.44968161981896E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link41_AxisRz_Shoulder_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R41_AxisRz_Shoulder_Rotation"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0185"
+      rpy="-1.5708 -1.3181 1.5708" />
+    <parent
+      link="Link40_AxisRy_Shoulder_Flexion" />
+    <child
+      link="Link41_AxisRz_Shoulder_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link42_AxisRx_Shoulder_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.0104533722287961 0.0621641528033098 -0.0367098346341928"
+        rpy="0 0 0" />
+      <mass
+        value="0.102684755192033" />
+      <inertia
+        ixx="0.000190384776363635"
+        ixy="3.56985264472031E-06"
+        ixz="-8.38018795361799E-06"
+        iyy="8.95074856580027E-05"
+        iyz="1.36363519746056E-05"
+        izz="0.000128462975328787" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link42_AxisRx_Shoulder_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R42_AxisRx_Shoulder_Abduction"
+    type="revolute">
+    <origin
+      xyz="-0.04 0.035 0"
+      rpy="-1.5708 -0.2706 0" />
+    <parent
+      link="Link41_AxisRz_Shoulder_Rotation" />
+    <child
+      link="Link42_AxisRx_Shoulder_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link43_AxisRy_Elbow_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.0080727687932108 -0.0218914501989354 3.10108556528244E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.0625250269673178" />
+      <inertia
+        ixx="2.66478004431713E-05"
+        ixy="6.31836864625833E-07"
+        ixz="-1.40643338442552E-11"
+        iyy="2.90856883755307E-05"
+        iyz="-2.34225449340681E-10"
+        izz="2.16871103273754E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link43_AxisRy_Elbow_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R43_AxisRy_Elbow_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.01133 0.12951 -0.035"
+      rpy="1.5708 0 -1.4835" />
+    <parent
+      link="Link42_AxisRx_Shoulder_Abduction" />
+    <child
+      link="Link43_AxisRy_Elbow_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link44_AxisRz_Wrist_Rotation">
+    <inertial>
+      <origin
+        xyz="-0.00052013572072046 0.000899444800886948 -0.0257687218150331"
+        rpy="0 0 0" />
+      <mass
+        value="0.0957043838830596" />
+      <inertia
+        ixx="5.31198214472714E-05"
+        ixy="4.22873926070956E-08"
+        ixz="-1.80532683877414E-07"
+        iyy="5.30300163545773E-05"
+        iyz="1.147383149236E-06"
+        izz="3.79612077187454E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link44_AxisRz_Wrist_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R44_AxisRz_Wrist_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.04 -0.019 0"
+      rpy="-1.5782 1.5708 -1.5782" />
+    <parent
+      link="Link43_AxisRy_Elbow_Flexion" />
+    <child
+      link="Link44_AxisRz_Wrist_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link45_AxisRx_Wrist_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.0081343586336623 4.05206361396918E-07 5.46147069513392E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0129110778126474" />
+      <inertia
+        ixx="5.34580369587512E-06"
+        ixy="-1.03772626660116E-10"
+        ixz="-6.34307336209697E-11"
+        iyy="1.41876387165847E-06"
+        iyz="1.77315332015436E-11"
+        izz="5.32098561653816E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link45_AxisRx_Wrist_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R45_AxisRx_Wrist_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0935"
+      rpy="0 1.5708 0" />
+    <parent
+      link="Link44_AxisRz_Wrist_Rotation" />
+    <child
+      link="Link45_AxisRx_Wrist_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link46_AxisRy_Wrist_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00278267075390032 0.0506979479143983 -0.000514721849918454"
+        rpy="0 0 0" />
+      <mass
+        value="0.0948671737442962" />
+      <inertia
+        ixx="6.39852654903485E-05"
+        ixy="-5.7365412448959E-06"
+        ixz="-3.49417172552981E-06"
+        iyy="2.95680935564869E-05"
+        iyz="-7.83632804567136E-06"
+        izz="4.67672378976367E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link46_AxisRy_Wrist_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link46_AxisRy_Wrist_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R46_AxisRy_Wrist_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 1.4835 0" />
+    <parent
+      link="Link45_AxisRx_Wrist_Abduction" />
+    <child
+      link="Link46_AxisRy_Wrist_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link61_AxisRz_ThumbKnucle_Rotation">
+    <inertial>
+      <origin
+        xyz="4.91409246072827E-08 -0.000121891601797812 -0.00201210065266587"
+        rpy="0 0 0" />
+      <mass
+        value="0.00115968038152585" />
+      <inertia
+        ixx="4.03439585123012E-08"
+        ixy="2.39268724516476E-13"
+        ixz="-3.87054840157714E-14"
+        iyy="4.18267857957213E-08"
+        iyz="4.02150632623849E-10"
+        izz="1.66744809622366E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link61_AxisRz_ThumbKnucle_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link61_AxisRz_ThumbKnucle_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R61_AxisRz_ThumbKnucle_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.020899 0.0382 -0.021786"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="Link46_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link61_AxisRz_ThumbKnucle_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link62_AxisRy_ThumbKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00162052317270532 0.0143580240590539 8.87240710345516E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00310333576369737" />
+      <inertia
+        ixx="2.79345952527193E-07"
+        ixy="-5.45699827270568E-08"
+        ixz="1.93583934077782E-12"
+        iyy="1.6061970074331E-07"
+        iyz="1.82698794796993E-12"
+        izz="2.38435467591372E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link62_AxisRy_ThumbKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link62_AxisRy_ThumbKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R62_AxisRy_ThumbKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="Link61_AxisRz_ThumbKnucle_Rotation" />
+    <child
+      link="Link62_AxisRy_ThumbKnucle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link63_AxisRy_Thumb_Flexion">
+    <inertial>
+      <origin
+        xyz="7.16902495705024E-05 0.00984633190078761 -0.000109122506530196"
+        rpy="0 0 0" />
+      <mass
+        value="0.0038950256358541" />
+      <inertia
+        ixx="3.31740758410828E-07"
+        ixy="8.52234616085922E-08"
+        ixz="-3.03665120916645E-10"
+        iyy="1.48960518802381E-07"
+        iyz="8.31876939876165E-10"
+        izz="3.11286681941717E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link63_AxisRy_Thumb_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link63_AxisRy_Thumb_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R63_AxisRy_Thumb_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.0077892 0.028971 -0.0001"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="Link62_AxisRy_ThumbKnucle_Flexion" />
+    <child
+      link="Link63_AxisRy_Thumb_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link64_AxisRx_IndexKnucle_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.000121891601795238 -4.91409302971757E-08 -0.00201210065266355"
+        rpy="0 0 0" />
+      <mass
+        value="0.00115968038152585" />
+      <inertia
+        ixx="4.18267857957161E-08"
+        ixy="-2.39268724346184E-13"
+        ixz="4.02150632622319E-10"
+        iyy="4.03439585123049E-08"
+        iyz="3.87054839557255E-14"
+        izz="1.66744809622274E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link64_AxisRx_IndexKnucle_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link64_AxisRx_IndexKnucle_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R64_AxisRx_IndexKnucle_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0.10071 -0.03"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="Link46_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link64_AxisRx_IndexKnucle_Abduction" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link65_AxisRy_IndexKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00211406335376799 0.0145062489951183 -4.40290206377147E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00305079596232101" />
+      <inertia
+        ixx="2.87529730754108E-07"
+        ixy="-1.55515958091808E-08"
+        ixz="-1.24036018621152E-13"
+        iyy="1.38377543503227E-07"
+        iyz="-3.76599757357535E-13"
+        izz="2.29166032829321E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link65_AxisRy_IndexKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link65_AxisRy_IndexKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R65_AxisRy_IndexKnucle_Flexion"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="Link64_AxisRx_IndexKnucle_Abduction" />
+    <child
+      link="Link65_AxisRy_IndexKnucle_Flexion" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link66_AxisRy_IndexMiddle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00240152083460479 0.00654385041930641 -7.78004879369992E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00237461021631886" />
+      <inertia
+        ixx="1.93784109250359E-07"
+        ixy="1.60821542165126E-08"
+        ixz="7.95861715000474E-11"
+        iyy="9.31756219047256E-08"
+        iyz="3.55124367944556E-10"
+        izz="1.51786468172039E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link66_AxisRy_IndexMiddle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link66_AxisRy_IndexMiddle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R66_AxisRy_IndexMiddle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.03 -0.0001"
+      rpy="3.1416 0 -3.1416" />
+    <parent
+      link="Link65_AxisRy_IndexKnucle_Flexion" />
+    <child
+      link="Link66_AxisRy_IndexMiddle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link67_AxisRy_IndexTip_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00555116931157285 0.00681823871639811 -2.21893247968202E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00253828371370102" />
+      <inertia
+        ixx="1.28437698390917E-07"
+        ixy="2.58021659424467E-08"
+        ixz="7.27690086499317E-12"
+        iyy="8.57012975056679E-08"
+        iyz="-6.31363709015424E-11"
+        izz="1.10632726364164E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link67_AxisRy_IndexTip_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link67_AxisRy_IndexTip_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R67_AxisRy_IndexTip_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.00093853 0.018977 -0.0001"
+      rpy="0 0 0" />
+    <parent
+      link="Link66_AxisRy_IndexMiddle_Flexion" />
+    <child
+      link="Link67_AxisRy_IndexTip_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link68_AxisRy_MiddleFingerKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00211406335376799 0.0145062489951181 -4.40290677181099E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.003050795962321" />
+      <inertia
+        ixx="2.87529730754099E-07"
+        ixy="-1.55515958091749E-08"
+        ixz="-1.24036018369782E-13"
+        iyy="1.38377543503217E-07"
+        iyz="-3.76599757307871E-13"
+        izz="2.29166032829303E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link68_AxisRy_MiddleFingerKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link68_AxisRy_MiddleFingerKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R68_AxisRy_MiddleFingerKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.0958 -0.012145"
+      rpy="-3.1416 0 -3.1416" />
+    <parent
+      link="Link46_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link68_AxisRy_MiddleFingerKnucle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link69_AxisRy_MiddleFingerMiddle_Flexion">
+    <inertial>
+      <origin
+        xyz="0.0024015208346044 0.00654385041930688 -7.78004879364545E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00237461021631886" />
+      <inertia
+        ixx="1.93784109250358E-07"
+        ixy="1.60821542165148E-08"
+        ixz="7.95861715001871E-11"
+        iyy="9.31756219047187E-08"
+        iyz="3.55124367944345E-10"
+        izz="1.51786468172031E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link69_AxisRy_MiddleFingerMiddle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link69_AxisRy_MiddleFingerMiddle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R69_AxisRy_MiddleFingerMiddle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.03 -0.0001"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="Link68_AxisRy_MiddleFingerKnucle_Flexion" />
+    <child
+      link="Link69_AxisRy_MiddleFingerMiddle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link81_AxisRy_MiddleFingerTip_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00555116931157487 -0.00681823871639956 -2.21893247968549E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00253828371370102" />
+      <inertia
+        ixx="1.28437698390917E-07"
+        ixy="2.58021659424493E-08"
+        ixz="-7.27690086496073E-12"
+        iyy="8.57012975056711E-08"
+        iyz="6.31363709016169E-11"
+        izz="1.10632726364166E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link81_AxisRy_MiddleFingerTip_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link81_AxisRy_MiddleFingerTip_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R81_AxisRy_MiddleFingerTip_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.00093853 0.018977 -0.0001"
+      rpy="0 0 -3.1416" />
+    <parent
+      link="Link69_AxisRy_MiddleFingerMiddle_Flexion" />
+    <child
+      link="Link81_AxisRy_MiddleFingerTip_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link82_AxisRy_PinkyKnucle_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00211406335376788 0.0145062489951181 0.00899999559709319"
+        rpy="0 0 0" />
+      <mass
+        value="0.00610159192464206" />
+      <inertia
+        ixx="5.75059461508254E-07"
+        ixy="-3.11031916184132E-08"
+        ixz="-2.48072038107511E-13"
+        iyy="2.7675508700658E-07"
+        iyz="-7.53199513738036E-13"
+        izz="4.58332065658804E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link82_AxisRy_PinkyKnucle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link82_AxisRy_PinkyKnucle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R82_AxisRy_PinkyKnucle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0.0958 0.023855"
+      rpy="-3.1416 0 -3.1416" />
+    <parent
+      link="Link46_AxisRy_Wrist_Flexion" />
+    <child
+      link="Link82_AxisRy_PinkyKnucle_Flexion" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link10_AxisRy_Hips_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.035491858736204 0.000913918322320435 0.018194719601768"
+        rpy="0 0 0" />
+      <mass
+        value="0.154615097187712" />
+      <inertia
+        ixx="0.000129284073057895"
+        ixy="5.95413093632001E-06"
+        ixz="-4.73243723374354E-06"
+        iyy="0.000183034354985313"
+        iyz="5.3222893380836E-06"
+        izz="7.52482691085157E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link10_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R10_AxisRy_Hips_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.058997 0 -0.036813"
+      rpy="0 -0.5236 3.1416" />
+    <parent
+      link="base_link_R0_HipsWaist_Yaw" />
+    <child
+      link="Link10_AxisRy_Hips_Flexion" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.396"
+      upper="1.396"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link11_AxisRx_Hips_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.000420686937343747 -0.0141524399660883 0.0464372807980134"
+        rpy="0 0 0" />
+      <mass
+        value="0.168812815651825" />
+      <inertia
+        ixx="0.000116232359472686"
+        ixy="-3.41286272029201E-06"
+        ixz="-2.94169778032604E-06"
+        iyy="0.000163337696614815"
+        iyz="-2.55918774884189E-05"
+        izz="0.000177818098522985" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link11_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R11_AxisRx_Hips_Abduction"
+    type="revolute">
+    <origin
+      xyz="-0.0395 0 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Link10_AxisRy_Hips_Flexion" />
+    <child
+      link="Link11_AxisRx_Hips_Abduction" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.436"
+      upper="1.047"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link12_AxisRz_Hips_Rotation">
+    <inertial>
+      <origin
+        xyz="0.029986520986284 0.000915006997885423 0.039584091405729"
+        rpy="0 0 0" />
+      <mass
+        value="0.308889411660343" />
+      <inertia
+        ixx="0.000258352042231295"
+        ixy="-1.20179858895001E-05"
+        ixz="-2.22319994921139E-05"
+        iyy="0.000446775467586572"
+        iyz="2.53945341205301E-05"
+        izz="0.000299366843256735" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link12_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R12_AxisRz_Hips_Rotation"
+    type="revolute">
+    <origin
+      xyz="0.000499999999999946 -0.0407499999999995 0.0705810704084321"
+      rpy="-0.523598775598292 0 3.14159265358979" />
+    <parent
+      link="Link11_AxisRx_Hips_Abduction" />
+    <child
+      link="Link12_AxisRz_Hips_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.222"
+      upper="1.571"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link13_AxisRy_Knee_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.00996165884627892 -3.95525887111892E-07 -0.0737094687999739"
+        rpy="0 0 0" />
+      <mass
+        value="0.20810093518798" />
+      <inertia
+        ixx="0.000251269487093237"
+        ixy="8.57301270576157E-11"
+        ixz="5.3734439372394E-06"
+        iyy="0.000240506181571732"
+        iyz="1.05076278008835E-09"
+        izz="7.36271056526116E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link13_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R13_AxisRy_Knee_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0.036"
+      rpy="3.14159265358979 0 -3.14159265358979" />
+    <parent
+      link="Link12_AxisRz_Hips_Rotation" />
+    <child
+      link="Link13_AxisRy_Knee_Flexion" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="2.094"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link14_AxisRy_Ankle_Flexion">
+    <inertial>
+      <origin
+        xyz="4.88789106049154E-05 -4.22901893046279E-07 -0.000941696331463626"
+        rpy="0 0 0" />
+      <mass
+        value="0.0198828974134901" />
+      <inertia
+        ixx="5.33136120702503E-06"
+        ixy="5.67526433369967E-11"
+        ixz="6.76121728274984E-09"
+        iyy="3.84427573974655E-06"
+        iyz="4.02949645568128E-12"
+        izz="8.29733415735585E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link14_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R14_AxisRy_Ankle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.14"
+      rpy="0 0 0" />
+    <parent
+      link="Link13_AxisRy_Knee_Flexion" />
+    <child
+      link="Link14_AxisRy_Ankle_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.96"
+      upper="0.698"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link15_AxisRx_Ankle_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.00749525839369256 -1.00190964788527E-07 -0.0413958069840309"
+        rpy="0 0 0" />
+      <mass
+        value="0.162069791623734" />
+      <inertia
+        ixx="8.37583833186821E-05"
+        ixy="9.35731632641608E-11"
+        ixz="5.76979843466876E-06"
+        iyy="0.000111745804529979"
+        iyz="5.47643800067597E-10"
+        izz="0.000127010438609888" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link15_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R15_AxisRx_Ankle_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="Link14_AxisRy_Ankle_Flexion" />
+    <child
+      link="Link15_AxisRx_Ankle_Abduction" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.96"
+      upper="0.96"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link16_AxisRx_Toe_Flexion">
+    <inertial>
+      <origin
+        xyz="0.0181977115240334 0.00126288994199182 -0.00954659053967732"
+        rpy="0 0 0" />
+      <mass
+        value="0.0664189830579757" />
+      <inertia
+        ixx="3.9575421565876E-05"
+        ixy="-1.39838716866601E-06"
+        ixz="4.60537840513915E-06"
+        iyy="2.87049416190121E-05"
+        iyz="-1.28510150087997E-07"
+        izz="5.6352915404693E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link16_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R16_AxisRx_Toe_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.055 0 -0.0425"
+      rpy="0 0 0" />
+    <parent
+      link="Link15_AxisRx_Ankle_Abduction" />
+    <child
+      link="Link16_AxisRx_Toe_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.785"
+      upper="0"
+      effort="0.44"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link20_AxisRy_Hips_Flexion">
+    <inertial>
+      <origin
+        xyz="-0.0191695238748907 -0.00104952349483888 -0.0352473021715193"
+        rpy="0 0 0" />
+      <mass
+        value="0.150034857109825" />
+      <inertia
+        ixx="7.41467834211886E-05"
+        ixy="4.27066915988223E-06"
+        ixz="4.19048433769206E-06"
+        iyy="0.000175384510459711"
+        iyz="-5.87188592248189E-06"
+        izz="0.000122352676232008" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link20_AxisRy_Hips_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R20_AxisRy_Hips_Flexion"
+    type="revolute">
+    <origin
+      xyz="-0.0589974226119289 0 -0.0368134665205265"
+      rpy="0 1.0471975511966 0" />
+    <parent
+      link="base_link_R0_HipsWaist_Yaw" />
+    <child
+      link="Link20_AxisRy_Hips_Flexion" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.396"
+      upper="1.396"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link21_AxisRx_Hips_Abduction">
+    <inertial>
+      <origin
+        xyz="0.00042158596077015 -0.0109610923852847 -0.0472922255513191"
+        rpy="0 0 0" />
+      <mass
+        value="0.168809122055464" />
+      <inertia
+        ixx="0.000116232144999569"
+        ixy="-4.42363621138769E-06"
+        ixz="-8.40343454054993E-07"
+        iyy="0.000144789714142267"
+        iyz="-6.52548921967782E-06"
+        izz="0.000196356223785667" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link21_AxisRx_Hips_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R21_AxisRx_Hips_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0395000000000001"
+      rpy="-1.0471975511966 0 1.5707963267949" />
+    <parent
+      link="Link20_AxisRy_Hips_Flexion" />
+    <child
+      link="Link21_AxisRx_Hips_Abduction" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.436"
+      upper="1.047"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link22_AxisRz_Hips_Rotation">
+    <inertial>
+      <origin
+        xyz="0.0299866277473481 -0.000913351495267445 0.0395841441494932"
+        rpy="0 0 0" />
+      <mass
+        value="0.308888997868642" />
+      <inertia
+        ixx="0.000258350925684757"
+        ixy="1.20182401296459E-05"
+        ixz="-2.22308950807633E-05"
+        iyy="0.000446773838834894"
+        iyz="-2.53944021702335E-05"
+        izz="0.00029936501568538" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link22_AxisRz_Hips_Rotation.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R22_AxisRz_Hips_Rotation"
+    type="revolute">
+    <origin
+      xyz="-0.000500000000000035 0 -0.0815000000000001"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="Link21_AxisRx_Hips_Abduction" />
+    <child
+      link="Link22_AxisRz_Hips_Rotation" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.222"
+      upper="1.571"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link23_AxisRy_Knee_Flexion">
+    <inertial>
+      <origin
+        xyz="0.00996165887106261 3.95160131366756E-07 -0.0737094687119398"
+        rpy="0 0 0" />
+      <mass
+        value="0.208100936749786" />
+      <inertia
+        ixx="0.000251269487849732"
+        ixy="8.58282830613431E-11"
+        ixz="-5.37344399965001E-06"
+        iyy="0.000240506181810468"
+        iyz="-1.05041562388345E-09"
+        izz="7.36271062058327E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link23_AxisRy_Knee_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R23_AxisRy_Knee_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0360000000000001"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="Link22_AxisRz_Hips_Rotation" />
+    <child
+      link="Link23_AxisRy_Knee_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="2.094"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link24_AxisRy_Ankle_Flexion">
+    <inertial>
+      <origin
+        xyz="-4.88788155061328E-05 4.2289045533439E-07 -0.000941696318086993"
+        rpy="0 0 0" />
+      <mass
+        value="0.0198828972990002" />
+      <inertia
+        ixx="5.33136120560905E-06"
+        ixy="5.67486535157324E-11"
+        ixz="-6.76121286353298E-09"
+        iyy="3.84427570506981E-06"
+        iyz="-4.03028590672082E-12"
+        izz="8.29733412364016E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link24_AxisRy_Ankle_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R24_AxisRy_Ankle_Flexion"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.14"
+      rpy="0 0 0" />
+    <parent
+      link="Link23_AxisRy_Knee_Flexion" />
+    <child
+      link="Link24_AxisRy_Ankle_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.96"
+      upper="0.689"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link25_AxisRx_Ankle_Abduction">
+    <inertial>
+      <origin
+        xyz="-0.00749525839677827 -1.00189232965509E-07 -0.0413958069745799"
+        rpy="0 0 0" />
+      <mass
+        value="0.162069791661843" />
+      <inertia
+        ixx="8.37583831864788E-05"
+        ixy="9.35835758800885E-11"
+        ixz="5.76979848237024E-06"
+        iyy="0.000111745804626165"
+        iyz="5.47634485585817E-10"
+        izz="0.000127010438487016" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link25_AxisRx_Ankle_Abduction.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R25_AxisRx_Ankle_Abduction"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Link24_AxisRy_Ankle_Flexion" />
+    <child
+      link="Link25_AxisRx_Ankle_Abduction" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.96"
+      upper="0.96"
+      effort="3.66"
+      velocity="5.05" />
+  </joint>
+  <link
+    name="Link26_AxisRx_Toe_Flexion">
+    <inertial>
+      <origin
+        xyz="0.0181977115240336 0.00126288994199179 -0.00954659053967744"
+        rpy="0 0 0" />
+      <mass
+        value="0.066418983057976" />
+      <inertia
+        ixx="3.95754215658759E-05"
+        ixy="-1.39838716866599E-06"
+        ixz="4.60537840513909E-06"
+        iyy="2.87049416190122E-05"
+        iyz="-1.28510150088011E-07"
+        izz="5.63529154046931E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CLOVIS25_URDF_Assembly_V1_With_Arms/meshes/Link26_AxisRx_Toe_Flexion.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R26_AxisRx_Toe_Flexion"
+    type="revolute">
+    <origin
+      xyz="0.0550000000000001 0 -0.0425"
+      rpy="0 0 0" />
+    <parent
+      link="Link25_AxisRx_Ankle_Abduction" />
+    <child
+      link="Link26_AxisRx_Toe_Flexion" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.785"
+      upper="0.96"
+      effort="0.44"
+      velocity="5.05" />
+  </joint>
+</robot>

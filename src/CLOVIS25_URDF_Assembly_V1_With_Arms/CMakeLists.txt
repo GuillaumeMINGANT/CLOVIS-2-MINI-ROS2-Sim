@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(CLOVIS25_URDF_Assembly_V1 With Arms)
+project(CLOVIS25_URDF_Assembly_V1_With_Arms)
 
 find_package(catkin REQUIRED)
 

@@ -3,7 +3,7 @@
     name="model" />
   <param
     name="robot_description"
-    textfile="$(find CLOVIS25_URDF_Assembly_V1 With Arms)/urdf/CLOVIS25_URDF_Assembly_V1 With Arms.urdf" />
+    textfile="$(find CLOVIS25_URDF_Assembly_V1_With_Arms)/urdf/CLOVIS25_URDF_Assembly_V1_With_Arms.urdf" />
   <node
     name="joint_state_publisher_gui"
     pkg="joint_state_publisher_gui"
@@ -16,5 +16,5 @@
     name="rviz"
     pkg="rviz"
     type="rviz"
-    args="-d $(find CLOVIS25_URDF_Assembly_V1 With Arms)/urdf.rviz" />
+    args="-d $(find CLOVIS25_URDF_Assembly_V1_With_Arms)/urdf.rviz" />
 </launch>
